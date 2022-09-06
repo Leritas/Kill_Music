@@ -5,5 +5,5 @@
   },
   "scripts": {
     "test": "node server.js"
-}
+  }
 }
