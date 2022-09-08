@@ -3,6 +3,7 @@ const app = express()
 const port = 80
 
 app.set('view engine', 'ejs')
+app.use(express.static(__dirname + '/public'))
 
 //Routes for main url
 
