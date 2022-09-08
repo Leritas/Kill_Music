@@ -78,15 +78,6 @@ html {
   width: 100%;
 }
 
-header {
-  width: 100%;
-}
-header .upper-header-block {
-  width: 100%;
-  height: 62px;
-  display: block;
-}
-
 body {
   width: 100%;
   background: lightgrey;
@@ -96,4 +87,91 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
+}
+a:focus-visible {
+  outline: 0;
+}
+
+header {
+  width: 100%;
+  background: white;
+}
+header .upper-header {
+  width: 100%;
+  height: 64px;
+}
+header .upper-header .upper-header-block {
+  display: flex;
+  width: 80%;
+  height: 64px;
+  margin: auto;
+}
+header .upper-header .upper-header-block .btn-call {
+  display: flex;
+  width: 210px;
+  height: 64px;
+}
+header .upper-header .upper-header-block .btn-call .phone-icon {
+  width: 32px;
+  height: 32px;
+  margin: 18px 5px 18px 5px;
+  transition: 0.2s;
+  fill: grey;
+}
+header .upper-header .upper-header-block .btn-call span {
+  vertical-align: middle;
+  text-align: center;
+  line-height: 64px;
+  font-size: 20px;
+  color: grey;
+  transition: 0.2s;
+}
+header .upper-header .upper-header-block .btn-call:hover .phone-icon {
+  fill: #FF6600;
+}
+header .upper-header .upper-header-block .btn-call:hover span {
+  color: #FF6600;
+}
+header .upper-header .upper-header-block .upper-header-block-btn {
+  display: flex;
+  width: calc(100% - 210px);
+  height: 64px;
+  line-height: 64px;
+}
+header .upper-header .upper-header-block .upper-header-block-btn .request-call {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FF6600;
+  transition: 0.2s;
+}
+header .upper-header .upper-header-block .upper-header-block-btn .request-call:hover {
+  color: grey;
+}
+header .upper-header .upper-header-block .upper-header-block-btn a {
+  height: 64px;
+  margin-left: 20px;
+  font-size: 16px;
+  color: grey;
+  transition: 0.2s;
+}
+header .upper-header .upper-header-block .upper-header-block-btn a:hover {
+  color: #FF6600;
+}
+header .bottom-header {
+  width: 100%;
+  height: 128px;
+}
+header .bottom-header .bottom-header-block {
+  display: flex;
+  width: 80%;
+  height: 128px;
+  margin: auto;
+}
+header .bottom-header .bottom-header-block .bottom-header-block-btn-logo .logo-svg {
+  width: 300px;
+  height: 128px;
+  fill: #FF6600;
 }/*# sourceMappingURL=main.css.map */
