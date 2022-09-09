@@ -10,7 +10,7 @@
     <script src="/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>
@@ -48,7 +48,41 @@
                         <use xlink:href="/main.svg#logo-svg"></use>
                     </svg>
                 </a>
-
+                <div class="headerCatalogBtn" onclick="activeBtnCatalog(this)">
+                    <svg class="grid-svg ">
+                        <use xlink:href="/main.svg#app-grid-svg"></use>
+                    </svg>
+                    <span>Каталог</span>
+                    <svg class="arrow-header-svg ">
+                        <use xlink:href="/main.svg#arrow-catalog-svg"></use>
+                    </svg>
+                </div>
+                <a href="" class="href-bottom-header">
+                    Акции
+                </a>
+                <a href="" class="href-bottom-header">
+                    Бренды
+                </a>
+                <div class="inp-bottom-header">
+                    <input type="text" placeholder="Search...">
+                    <button >
+                        <svg class="search-svg-icon ">
+                            <use xlink:href="/main.svg#search-svg"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="liked-product-cart-bottom-header">
+                    <svg class="like-cart-icon ">
+                        <use xlink:href="/main.svg#like-svg"></use>
+                    </svg>
+                    <span>0</span>
+                </div>
+                <div class="liked-product-cart-bottom-header">
+                    <svg class="like-cart-icon ">
+                        <use xlink:href="/main.svg#cart-svg"></use>
+                    </svg>
+                    <span>0</span>
+                </div>
             </div>
         </div>
     </header>

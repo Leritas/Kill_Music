@@ -82,7 +82,7 @@ body {
   width: 100%;
   background: lightgrey;
   text-align: center;
-  font-family: "Lora", serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -115,7 +115,7 @@ header .upper-header .upper-header-block .btn-call {
 header .upper-header .upper-header-block .btn-call .phone-icon {
   width: 32px;
   height: 32px;
-  margin: 18px 5px 18px 5px;
+  margin: 18px 0 18px 0;
   transition: 0.2s;
   fill: grey;
 }
@@ -163,6 +163,7 @@ header .upper-header .upper-header-block .upper-header-block-btn a:hover {
 header .bottom-header {
   width: 100%;
   height: 128px;
+  border-top: 1px solid whitesmoke;
 }
 header .bottom-header .bottom-header-block {
   display: flex;
@@ -171,7 +172,167 @@ header .bottom-header .bottom-header-block {
   margin: auto;
 }
 header .bottom-header .bottom-header-block .bottom-header-block-btn-logo .logo-svg {
-  width: 300px;
+  width: 250px;
   height: 128px;
   fill: #FF6600;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn {
+  display: flex;
+  width: 175px;
+  height: 50px;
+  line-height: 46px;
+  margin-left: 10px;
+  margin-top: 39px;
+  border: 2px solid #FF6600;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn .grid-svg {
+  width: 46px;
+  height: 46px;
+  fill: rgba(0, 0, 0, 0);
+  stroke: #FF6600;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn span {
+  color: #FF6600;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn .arrow-header-svg {
+  width: 22px;
+  height: 22px;
+  margin: 12px;
+  fill: #FF6600;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn:hover {
+  background: #FF6600;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn:hover .grid-svg {
+  stroke: white;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn:hover span {
+  color: white;
+}
+header .bottom-header .bottom-header-block .headerCatalogBtn:hover .arrow-header-svg {
+  fill: white;
+}
+header .bottom-header .bottom-header-block .btnActiveCatalogHeader {
+  background: #FF6600;
+}
+header .bottom-header .bottom-header-block .btnActiveCatalogHeader .grid-svg {
+  fill: white;
+  stroke: rgba(0, 0, 0, 0);
+}
+header .bottom-header .bottom-header-block .btnActiveCatalogHeader span {
+  color: white;
+}
+header .bottom-header .bottom-header-block .btnActiveCatalogHeader .arrow-header-svg {
+  fill: white;
+  transform: rotate(180deg);
+}
+header .bottom-header .bottom-header-block .btnActiveCatalogHeader:hover .grid-svg {
+  stroke: rgba(0, 0, 0, 0);
+}
+header .bottom-header .bottom-header-block .href-bottom-header {
+  height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 50px;
+  margin-left: 20px;
+  margin-top: 39px;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .href-bottom-header:hover {
+  color: #FF6600;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header {
+  display: flex;
+  width: calc(100% - 790px);
+  height: 50px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-top: 39px;
+  margin-right: 0;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header input {
+  border: 0;
+  height: 50px;
+  width: calc(100% - 50px);
+  background: 0;
+  border-radius: 10px;
+  padding: 0;
+  padding-left: 10px;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header input:focus-visible {
+  outline: 0;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header button {
+  background: 0;
+  border: 0px;
+  width: 50px;
+  height: 48px;
+  padding: 0;
+  cursor: pointer;
+  background: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header button .search-svg-icon {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  fill: grey;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header button:hover {
+  background: rgba(201, 201, 201, 0.7);
+}
+header .bottom-header .bottom-header-block .inp-bottom-header button:hover .search-svg-icon {
+  fill: #FF6600;
+}
+header .bottom-header .bottom-header-block .inp-bottom-header button:focus-visible {
+  outline: 0;
+}
+header .bottom-header .bottom-header-block .liked-product-cart-bottom-header {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-top: 39px;
+  margin-left: 20px;
+}
+header .bottom-header .bottom-header-block .liked-product-cart-bottom-header .like-cart-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin: 9px;
+  transition: 0.2s;
+}
+header .bottom-header .bottom-header-block .liked-product-cart-bottom-header .like-cart-icon:hover {
+  fill: #FF6600;
+}
+header .bottom-header .bottom-header-block .liked-product-cart-bottom-header span {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  width: 18px;
+  height: 17px;
+  font-size: 0.8em;
+  line-height: 17px;
+  color: #fff;
+  border-radius: 100%;
+  text-align: center;
+  box-shadow: none;
+  background: #FF6600;
 }/*# sourceMappingURL=main.css.map */
