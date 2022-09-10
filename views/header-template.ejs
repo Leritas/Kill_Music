@@ -88,7 +88,7 @@
     </header>
 
     <header class="mobile-screen-header">
-        <svg class="menu-btn-header">
+        <svg class="menu-btn-header" onclick="menuSlider()">
             <use xlink:href="/main.svg#menu-svg"></use>
         </svg>
         <a href="/">
@@ -106,3 +106,5 @@
             <use xlink:href="/main.svg#cart-svg"></use>
         </svg>
     </header>
+
+    <%- include('menu-slider', { headLink: locals.headLink }) %>
