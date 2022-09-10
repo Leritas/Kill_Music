@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fullscreen-header">
         <div class="upper-header">
             <div class="upper-header-block">
                 <a href="tel:+79524920727" class="btn-call">
@@ -85,4 +85,24 @@
                 </div>
             </div>
         </div>
+    </header>
+
+    <header class="mobile-screen-header">
+        <svg class="menu-btn-header">
+            <use xlink:href="/main.svg#menu-svg"></use>
+        </svg>
+        <a href="/">
+            <svg class="logo-btn-header-mobil ">
+                <use xlink:href="/main.svg#logo-svg"></use>
+            </svg>
+        </a>
+        <div class="search-mobile-header">
+            <svg class="search-svg-mobile-header" onclick="showSearchInp()">
+                <use xlink:href="/main.svg#search-svg"></use>
+            </svg>
+            <input type="text" placeholder="Search..." class="inp-hide-header">
+        </div>
+        <svg class="cart-btn-header-mobil">
+            <use xlink:href="/main.svg#cart-svg"></use>
+        </svg>
     </header>
