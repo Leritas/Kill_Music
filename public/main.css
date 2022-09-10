@@ -347,7 +347,7 @@ a:focus-visible {
   width: 40px;
   height: 40px;
   margin: 12px;
-  transition: 0.2s;
+  transition: fill 0.2s;
   cursor: pointer;
 }
 .mobile-screen-header .menu-btn-header:hover {
@@ -361,10 +361,10 @@ a:focus-visible {
   width: 300px;
   height: 40px;
   margin: 12px;
-  transition: 0.2s;
+  transition: width 0.2s;
 }
-.mobile-screen-header a .logo-hide-btn-header-mobil {
-  width: 0px;
+.mobile-screen-header a .logo-btn-header-mobil.active {
+  width: 0px !important;
 }
 .mobile-screen-header .search-mobile-header {
   display: flex;
@@ -374,13 +374,16 @@ a:focus-visible {
   margin-right: 0px;
   width: 64px;
   max-width: calc(100% - 152px);
-  transition: 0.3s;
+  transition: width 0.3s;
+}
+.mobile-screen-header .search-mobile-header.active {
+  width: 100% !important;
 }
 .mobile-screen-header .search-mobile-header .search-svg-mobile-header {
   width: 40px;
   height: 40px;
   margin: 12px;
-  transition: 0.2s;
+  transition: fill 0.2s;
   cursor: pointer;
 }
 .mobile-screen-header .search-mobile-header .search-svg-mobile-header:hover {
@@ -392,7 +395,7 @@ a:focus-visible {
   width: 0px;
   border: 0px;
   padding: 0;
-  transition: 0.2s;
+  transition: width 0.2s;
 }
 .mobile-screen-header .search-mobile-header .inp-hide-header:focus-visible {
   outline: 0;
@@ -405,7 +408,7 @@ a:focus-visible {
   width: 40px;
   height: 40px;
   margin: 12px;
-  transition: 0.2s;
+  transition: fill 0.2s;
   cursor: pointer;
   align-self: flex-end;
 }

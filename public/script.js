@@ -3,14 +3,14 @@ function activeBtnCatalog(div) {
 }
 
 function showSearchInp() {
-    if (document.querySelector('.logo-hide-btn-header-mobil')){
-        document.querySelector('.search-mobile-header').style.width = ""
-        document.querySelector('.logo-btn-header-mobil').style.width = "230px"
+    if (document.querySelector('.inp-show-onclick')) {
+            setTimeout( () => {document.querySelector('.logo-btn-header-mobil').classList.toggle('active')  }, 200)
+            document.querySelector('.search-mobile-header').classList.toggle('active')
+            document.querySelector('.inp-hide-header').classList.toggle('inp-show-onclick')
     } else {
-        document.querySelector('.search-mobile-header').style.width = "100%"
-        document.querySelector('.logo-btn-header-mobil').style.width = "0px"
+            document.querySelector('.logo-btn-header-mobil').classList.toggle('active')    
+            setTimeout( () => {document.querySelector('.search-mobile-header').classList.toggle('active')}, 200)
+            setTimeout( () => {document.querySelector('.inp-hide-header').classList.toggle('inp-show-onclick')}, 200)
     }
-    
-    document.querySelector('.logo-btn-header-mobil').classList.toggle('logo-hide-btn-header-mobil')
-    document.querySelector('.inp-hide-header').classList.toggle('inp-show-onclick')
+ 
 }
