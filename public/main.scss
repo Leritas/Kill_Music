@@ -403,6 +403,7 @@ a {
         width: 40px;
         height: 40px;
         margin: 12px;
+        fill: black;
         transition: fill .2s;
         cursor: pointer;
 
@@ -519,6 +520,7 @@ a {
     &-wrap {
         display:flex;
         width: fit-content;
+        transition: margin-left .3s;
         
     
         .page{
@@ -534,6 +536,7 @@ a {
                     width: 24px;
                     height: 24px;
                     margin: 20px;
+                    margin-left: 12px;
                     transform: rotate(-90deg);
                     transition: .2s;
                 }
@@ -553,25 +556,104 @@ a {
                     }
                 }
             }
-        }
+
+            .catalog{
+                display: flex;
+                width: 100%;
+                height: 64px;
+                line-height: 64px;
+                justify-content: space-between;
+                transition: color .2s;
+                cursor: pointer;
     
-
-        .catalog{
-            display: flex;
-            width: 100%;
-            height: 64px;
-            line-height: 64px;
-
-            span{
-                font-size: 18px;
-                
+                span{
+                    font-size: 18px;
+                    margin-left: 12px;
+                    
+                }
+    
+                .more-catalog-svg{
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin: 22px;
+                    transform: rotate(90deg);
+                    transition: fill .2s;
+                }
+    
+                &:hover {
+                    color: $primary-orange;
+                    fill: $primary-orange;
+    
+                }
             }
 
-            .more-catalog-svg{
-                display: inline-block;
-                width: 40px;
-                height: 40px;
+            h3 {
+                text-align: left;
+                margin-left: 12px;
+                color: $primary-orange;
+                width: calc(100% - 12px);
+                height: 64px;
+                line-height: 64px;
+            }
+
+            h4{
+                text-align: left;
                 margin: 12px;
+                width: calc(100% - 24px);
+            }
+
+            a{
+                .btn-menu-a{
+                    width: calc(100% - 12px);
+                    height: 64px;
+                    line-height: 64px;
+                    text-align: left;
+                    font-size: 18px;
+                    padding-left: 12px;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $primary-orange;
+                    }
+                }
+
+                .contact-menu-btn{
+                    display: flex;
+                    width: 100%;
+                    height: 64px;
+                    line-height: 64px;
+                    transition: color .2s;
+                    font-size: 14px;
+                    fill: black;
+
+
+                    .phone-svg-menu{
+                        width: 24px;
+                        height: 24px;
+                        margin: 20px;
+                        margin-left: 12px;
+                        transition: fill .2s;
+                    }
+
+                    &:hover {
+                        color: $primary-orange;
+                        fill: $primary-orange;
+                    }
+                }
+
+                fill: #5281b8;
+
+                .vk-svg-menu{
+                    width: 40px;
+                    height: 40px;
+                    transition: fill .2s;
+                }
+
+                &:hover {
+                    fill: rgba(82, 129, 184, .7);
+                }
+                
             }
         }
     }

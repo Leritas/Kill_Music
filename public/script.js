@@ -1,3 +1,19 @@
+let pageCount = 0
+let pageMarginLeft = 0
+
+window.addEventListener('resize', closeMenuPage);
+
+function closeMenuPage() {
+	let pageWidth = window.innerWidth
+	if (pageWidth > 970) {
+        pageCount = 0;
+        pageMarginLeft = 0;
+        document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
+        document.querySelector('.block-screen').classList.remove('active')
+        document.querySelector('.menu-slider').classList.remove('active')
+    }
+}
+
 function activeBtnCatalog(div) {
     div.classList.toggle('btnActiveCatalogHeader')
 }
@@ -15,6 +31,22 @@ function showSearchInp() {
 }
 
 function menuSlider() {
+    pageCount = 0;
+    pageMarginLeft = 0;
+    document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
     document.querySelector('.block-screen').classList.toggle('active')
     document.querySelector('.menu-slider').classList.toggle('active')
+}
+
+function scrollPageRight(div){
+    pageCount += 1;
+    pageMarginLeft += -300;
+    document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
+    document.querySelector('.second-layer').querySelector('h3').textContent=div.querySelector('span').textContent
+}
+
+function scrollPageLeft(div) {
+    pageCount -= 1;
+    pageMarginLeft -= -300;
+    document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
 }
