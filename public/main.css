@@ -96,6 +96,9 @@ a:focus-visible {
 .fullscreen-header {
   width: 100%;
   background: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -64px;
 }
 .fullscreen-header .upper-header {
   width: 100%;
@@ -557,6 +560,11 @@ a:focus-visible {
 }
 .menu-slider-wrap .page a:hover {
   fill: rgba(82, 129, 184, 0.7);
+}
+
+.wrap {
+  width: 100%;
+  min-height: calc(100vh - 100px);
 }
 
 @media screen and (max-width: 1200px) {

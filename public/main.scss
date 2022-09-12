@@ -103,6 +103,8 @@ a {
 .fullscreen-header {
     width: 100%;
     background: white;
+    position: sticky;
+    top: -64px;
 
     .upper-header {
         width: 100%;
@@ -657,6 +659,16 @@ a {
             }
         }
     }
+}
+
+//wrap of body
+.wrap{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+}
+
+footer {
+
 }
 
 @media screen and (max-width: 1200px){
