@@ -84,7 +84,7 @@ html {
 
 body {
     width: 100%;
-    background: lightgrey;
+    background: white;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
@@ -99,6 +99,10 @@ a {
 }
 
 //header css
+
+header {
+    box-shadow: 0px 5px 10px rgba(186, 186, 186, .2);
+}
 
 .fullscreen-header {
     width: 100%;
@@ -237,6 +241,7 @@ a {
                     height: 22px;
                     margin: 12px;
                     fill: $primary-orange;
+                    transform: rotate(180deg);
                     transition: .2s;
                 }
 
@@ -271,7 +276,7 @@ a {
 
                 .arrow-header-svg {
                     fill: white;
-                    transform: rotate(180deg);
+                    transform: rotate(0deg);
                 }
 
                 &:hover {
@@ -498,6 +503,7 @@ a {
     bottom: 0;
     left: 0;
     background: rgba(150, 150, 150, .7);
+    z-index: 99;
 
     &.active {
         opacity: 1;
@@ -514,6 +520,7 @@ a {
     background: white;
     overflow: hidden;
     transition: left .2s;
+    z-index: 100;
 
     &.active {
         left: 0;
@@ -664,11 +671,165 @@ a {
 //wrap of body
 .wrap{
     width: 100%;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 270px);
 }
 
 footer {
+    width: 100%;
+    background: #333;
+    min-height: 270px;
+    
+    
+    h5{
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10%;
+        color: #999;
+        text-align: left;
+    }
 
+    .btn-footer-flex{
+        display: flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        width: 80%;
+        margin: auto;
+        padding-top: 22px;
+
+        .drop-menu-footer{
+            width: 200px;
+            text-align: left;
+
+            .btn-click-footer{
+                span{
+                    color: white;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+
+                .arrow-footer{
+                    display: none;
+                    width: 26px;
+                    height: 26px;
+                    margin: 12px;
+                    fill: white;
+                }
+            }
+
+            
+            .drop-down-menu-footer{
+                width: 100%;
+                margin-top: 12px;
+
+                div{
+                    width: 100%;
+                    height: 24px;
+                    a{
+                        color: #999;
+                        margin-top: 5px;
+                        font-size: 14px;
+                        transition: color .2s;
+
+                        &:hover{
+                            color: lightgrey;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        .contact-info-footer{
+            width: 200px;
+            text-align: left;
+
+            .btn-callback-footer{
+                width: 100%;
+                height: 50px;
+                background: rgba(153, 153, 153, .6);
+                border-radius: 5px;
+                text-align: center;
+                line-height: 50px;
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background .2s;
+
+                &:hover {
+                    background: $primary-orange;
+                }
+            }
+
+            a{
+                div{
+                    display: flex;
+                    width: 100%;
+                    height: 36px;
+                    margin-top: 5px;
+                    fill: #999;
+                    color: #999;
+                    font-size: 11px;
+                    line-height: 36px;
+
+                    .svg-icon-footer{
+                        width: 24px;
+                        height: 24px;
+                        margin: 6px;
+                        margin-left: 0px;
+                        
+                        transition: fill .2s;
+                    }
+
+                    &:hover{
+                        color: lightgrey;
+                        fill: lightgrey;
+                    }
+                }   
+
+            }
+        }
+    }
+
+    .line-footer{
+        width: 80%;
+        margin: auto;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255,255,255,.08);
+            margin-top: -1px;
+            z-index: 1;
+        }
+
+        div{
+            position: relative;
+            display: inline-block;
+            padding: 0 32px;
+            background: #333;
+            z-index: 1;
+
+            a{
+                .vk-icon-footer{
+                    width: 50px;
+                    height: 50px;
+                    fill: rgba(0,0,0,0);
+                    border: 1px solid rgba(255,255,255,.08);
+                    border-radius: 10px;
+                    transition: fill .2s;
+                    
+                    &:hover{
+                        fill:#5281b8;
+                    }
+                }
+            }
+        }
+    } 
 }
 
 @media screen and (max-width: 1200px){
@@ -736,5 +897,141 @@ footer {
             margin-left: 10px;
             margin-bottom: 20px;
         }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    footer {
+        h5{
+            margin-left: 12px;
+        }
+    
+        .btn-footer-flex{
+            width: calc(100% - 24px);
+            margin-left: 12px;
+            margin-right: 12px;
+            
+            .drop-menu-footer{
+                margin-bottom: 20px;
+            }
+        }
+    
+        .line-footer{
+            width: calc(100% - 24px);
+            margin-left: 12px;
+            margin-right: 12px;
+        } 
+    }
+}
+
+@media screen and (max-width: 838px){
+    .wrap{
+        min-height: calc(100vh - 400px);
+    }
+
+    footer {
+        min-height: 400px;
+
+        .btn-footer-flex{
+            flex-wrap: wrap;
+            justify-content: space-around;
+            -webkit-justify-content: space-around;
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+    footer {        
+    
+        .btn-footer-flex{
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+    
+            .drop-menu-footer{
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+
+                .btn-click-footer{
+                    display: flex;
+                    justify-content: space-between;
+                    -webkit-justify-content: space-between;
+                    height: 50px;
+                    line-height: 50px;
+                    cursor: pointer;
+                    border-bottom: 1px solid rgba(255,255,255,.08);
+                    transition: background .2s;
+
+                    &:hover{
+                        background: rgba(153, 153, 153, .6);
+                    }
+
+                    span{
+                        margin-left: 12px;
+                    }
+
+                    .arrow-footer{
+                        transform: rotate(180deg);
+                        display: block;
+                        transition: transform .2s;
+
+                        &.active{
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+                
+                .drop-down-menu-footer{
+                    margin: 0px;
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: max-height .2s;
+
+                    div{
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(255,255,255,.08);
+                        transition: background .2s;
+                        
+                        a{
+                            color: white;
+                            margin-left: 12px;
+                            &:hover{
+                                color: white;
+                        }
+                        }
+
+                        &:hover {
+                            background: rgba(153, 153, 153, .6);
+                        }
+                        
+                    }
+                    
+                    &.active{
+                        max-height: 150px;
+                    }
+                }
+            }
+    
+            .contact-info-footer{
+                margin: 12px;
+                margin-top: 5px;
+                width: calc(100% - 24px);
+    
+                a{
+                    div{
+                        font-size: 14px;
+                    }   
+                }
+            }
+        }
+    
+        .line-footer{
+            width: calc(100% - 24px);    
+        } 
     }
 }

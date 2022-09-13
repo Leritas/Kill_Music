@@ -50,3 +50,8 @@ function scrollPageLeft(div) {
     pageMarginLeft -= -300;
     document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
 }
+
+function showDropdownMenuFooter(div){
+    div.closest('.drop-menu-footer').querySelector('.drop-down-menu-footer').classList.toggle('active')
+    div.querySelector('.arrow-footer').classList.toggle('active')
+}
