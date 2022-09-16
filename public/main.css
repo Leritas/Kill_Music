@@ -433,6 +433,7 @@ header {
   left: 0;
   background: rgba(150, 150, 150, 0.7);
   z-index: 99;
+  padding-bottom: 100px;
 }
 .block-screen.active {
   opacity: 1;
@@ -449,6 +450,7 @@ header {
   overflow: hidden;
   transition: left 0.2s;
   z-index: 100;
+  padding-bottom: 100px;
 }
 .menu-slider.active {
   left: 0;

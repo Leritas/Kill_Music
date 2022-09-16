@@ -504,6 +504,7 @@ header {
     left: 0;
     background: rgba(150, 150, 150, .7);
     z-index: 99;
+    padding-bottom: 100px;
 
     &.active {
         opacity: 1;
@@ -521,6 +522,7 @@ header {
     overflow: hidden;
     transition: left .2s;
     z-index: 100;
+    padding-bottom: 100px;
 
     &.active {
         left: 0;
