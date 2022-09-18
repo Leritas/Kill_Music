@@ -16,6 +16,7 @@ function closeMenuPage() {
 
 function activeBtnCatalog(div) {
     div.classList.toggle('btnActiveCatalogHeader')
+    document.querySelector('.catalog').classList.toggle('active')
 }
 
 function showSearchInp() {
