@@ -346,6 +346,31 @@ header {
   box-shadow: none;
   background: #FF6600;
 }
+.fullscreen-header .catalog {
+  position: absolute;
+  width: 100%;
+  max-height: 0;
+  background: red;
+  overflow-y: scroll;
+  transition: max-height 0.3s;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.fullscreen-header .catalog.active {
+  max-height: calc(100vh - 192px);
+}
+.fullscreen-header .catalog::-webkit-scrollbar {
+  width: 0;
+}
+.fullscreen-header .catalog .sub-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: grey;
+}
 
 .mobile-screen-header {
   display: none;
@@ -449,10 +474,13 @@ header {
   left: -100%;
   width: 300px;
   background: white;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: left 0.2s;
   z-index: 100;
   padding-bottom: 100px;
+}
+.menu-slider::-webkit-scrollbar {
+  width: 0;
 }
 .menu-slider.active {
   left: 0;
@@ -463,6 +491,37 @@ header {
   width: -moz-fit-content;
   width: fit-content;
   transition: margin-left 0.3s;
+}
+.menu-slider-wrap .catalog {
+  width: 100%;
+  background: red;
+  overflow-y: scroll;
+  transition: max-height 0.3s;
+  display: block;
+}
+.menu-slider-wrap .catalog::-webkit-scrollbar {
+  width: 0;
+}
+.menu-slider-wrap .catalog .sub-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: grey;
+}
+.menu-slider-wrap .catalog .sub-catalog .next {
+  display: none;
+}
+.menu-slider-wrap .catalog .sub-catalog .next.active {
+  display: flex;
+}
+.menu-slider-wrap .second-layer .sub-catalog span {
+  display: none;
+}
+.menu-slider-wrap .therd-layer .sub-catalog {
+  display: none;
+}
+.menu-slider-wrap .therd-layer .sub-catalog.active {
+  display: flex;
 }
 .menu-slider-wrap .page {
   width: 300px;
@@ -491,7 +550,7 @@ header {
 .menu-slider-wrap .page .back-btn-menu:hover span {
   color: #FF6600;
 }
-.menu-slider-wrap .page .catalog {
+.menu-slider-wrap .page .menu-item {
   display: flex;
   width: 100%;
   height: 64px;
@@ -500,11 +559,11 @@ header {
   transition: color 0.2s;
   cursor: pointer;
 }
-.menu-slider-wrap .page .catalog span {
+.menu-slider-wrap .page .menu-item span {
   font-size: 18px;
   margin-left: 12px;
 }
-.menu-slider-wrap .page .catalog .more-catalog-svg {
+.menu-slider-wrap .page .menu-item .more-catalog-svg {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -512,7 +571,7 @@ header {
   transform: rotate(90deg);
   transition: fill 0.2s;
 }
-.menu-slider-wrap .page .catalog:hover {
+.menu-slider-wrap .page .menu-item:hover {
   color: #FF6600;
   fill: #FF6600;
 }
@@ -571,70 +630,6 @@ header {
 }
 .menu-slider-wrap .page a:hover {
   fill: rgba(82, 129, 184, 0.7);
-}
-
-.catalog {
-  position: absolute;
-  width: 100%;
-  max-height: 0;
-  background: white;
-  overflow-y: scroll;
-  transition: max-height 0.3s;
-}
-.catalog.active {
-  max-height: calc(100vh - 192px);
-}
-.catalog::-webkit-scrollbar {
-  width: 0;
-}
-.catalog .catalog-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 80%;
-  height: 300px;
-  margin: auto;
-}
-.catalog .catalog-flex .catalog-one {
-  width: 300px;
-  height: 100px;
-  text-align: left;
-}
-.catalog .catalog-flex .catalog-one .catalog-first {
-  width: 100%;
-  height: 50px;
-  color: black;
-  line-height: 50px;
-  font-size: 30px;
-}
-.catalog .catalog-flex .catalog-one .catalog-first span {
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.catalog .catalog-flex .catalog-one .catalog-first span:hover {
-  color: #FF6600;
-}
-.catalog .catalog-flex .catalog-one .catalog-second {
-  width: 100%;
-  height: 30px;
-  color: grey;
-  line-height: 30px;
-  font-size: 20px;
-}
-.catalog .catalog-flex .catalog-one .catalog-second span {
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.catalog .catalog-flex .catalog-one .catalog-second span:hover {
-  color: #FF6600;
-}
-.catalog .catalog-flex .catalog-one .more-btn-catalog {
-  width: 100%;
-  height: 30px;
-  color: #FF6600;
-  line-height: 30px;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .wrap {

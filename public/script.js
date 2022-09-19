@@ -4,6 +4,7 @@ let pageMarginLeft = 0
 window.addEventListener('resize', closeMenuPage);
 
 function closeMenuPage() {
+    clearActiveChoosen()
 	let pageWidth = window.innerWidth
 	if (pageWidth > 970) {
         pageCount = 0;
@@ -32,6 +33,7 @@ function showSearchInp() {
 }
 
 function menuSlider() {
+    clearActiveChoosen()
     pageCount = 0;
     pageMarginLeft = 0;
     document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
@@ -40,13 +42,15 @@ function menuSlider() {
 }
 
 function scrollPageRight(div){
+    clearActiveChoosen()
     pageCount += 1;
     pageMarginLeft += -300;
     document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
-    document.querySelector('.second-layer').querySelector('h3').textContent=div.querySelector('span').textContent
+    showNextChoosen(div)
 }
 
 function scrollPageLeft(div) {
+    clearActiveChoosen()
     pageCount -= 1;
     pageMarginLeft -= -300;
     document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
@@ -55,4 +59,17 @@ function scrollPageLeft(div) {
 function showDropdownMenuFooter(div){
     div.closest('.drop-menu-footer').querySelector('.drop-down-menu-footer').classList.toggle('active')
     div.querySelector('.arrow-footer').classList.toggle('active')
+}
+
+
+
+function showNextChoosen(h) {
+    let text = h.innerHTML;
+   Array.from(h.closest('.page').nextElementSibling.querySelectorAll('h1'))
+   .find(el => el.textContent === text).closest('.sub-catalog').classList.toggle('active')
+   
+}
+
+function clearActiveChoosen() {
+    document.querySelectorAll('.sub-catalog.active')?.classList.remove('active')
 }
