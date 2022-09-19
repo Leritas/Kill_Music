@@ -406,6 +406,7 @@ header {
 
     .catalog {
         position: absolute;
+        left: 0;
         width: 100%;
         max-height: 0;
         background: red;
@@ -416,6 +417,7 @@ header {
         gap: $catalog-gap;
         padding-left: $catalog-gap;
         padding-right: $catalog-gap;
+        z-index: 70;
 
         &.active {
             max-height: calc(100vh - 192px);
@@ -602,6 +604,7 @@ header {
                 }
             }
         }
+
         .second-layer {
             .sub-catalog {
                 span {
@@ -609,15 +612,17 @@ header {
                 }
             }
         }
+
         .therd-layer {
             .sub-catalog {
                 display: none;
-                
+
                 &.active {
                     display: flex;
                 }
             }
         }
+
         .page {
             width: 300px;
 
@@ -882,26 +887,29 @@ footer {
     .line-footer {
         width: 80%;
         margin: auto;
-        position: relative;
+        display: flex;
+        justify-content: space-between;
 
         &::before {
             content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
+            margin-top: 25px;
+            width: 40%;
             height: 1px;
             background: rgba(255, 255, 255, .08);
-            margin-top: -1px;
-            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            margin-top: 25px;
+            width: 40%;
+            height: 1px;
+            background: rgba(255, 255, 255, .08);
         }
 
         div {
-            position: relative;
             display: inline-block;
             padding: 0 32px;
             background: #333;
-            z-index: 1;
 
             a {
                 .vk-icon-footer {
