@@ -4,7 +4,6 @@ let pageMarginLeft = 0
 window.addEventListener('resize', closeMenuPage);
 
 function closeMenuPage() {
-    clearActiveChoosen()
 	let pageWidth = window.innerWidth
 	if (pageWidth > 970) {
         pageCount = 0;
@@ -12,6 +11,7 @@ function closeMenuPage() {
         document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
         document.querySelector('.block-screen').classList.remove('active')
         document.querySelector('.menu-slider').classList.remove('active')
+        clearActiveChoosen()
     }
 }
 
@@ -61,8 +61,6 @@ function showDropdownMenuFooter(div){
     div.querySelector('.arrow-footer').classList.toggle('active')
 }
 
-
-
 function showNextChoosen(h) {
     let text = h.innerHTML;
    Array.from(h.closest('.page').nextElementSibling.querySelectorAll('h1'))
@@ -71,5 +69,5 @@ function showNextChoosen(h) {
 }
 
 function clearActiveChoosen() {
-    document.querySelectorAll('.sub-catalog.active')?.classList.remove('active')
+    document.querySelector('.sub-catalog.active')?.classList.toggle('active')
 }
