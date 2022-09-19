@@ -1,7 +1,5 @@
 <%- include('header-template', { title: locals.title, activeHeader: locals.activeHeader, headLink: locals.headLink }) %>
 
-index page body
-
 <%
 switch(locals.page) { 
 
@@ -23,7 +21,5 @@ switch(locals.page) {
     <%- include('pages/error') %>
     <% break;
 } %>
-
-
 
 <%- include('footer-template') %>
