@@ -2,4 +2,28 @@
 
 index page body
 
+<%
+switch(locals.page) { 
+
+    case 'main': %>
+    <%- include('pages/main') %>
+    <% break;
+
+    case 'about': %>
+    <%- include('pages/about') %> 
+    <% break;
+
+    case 'contacts': %>
+    <%- include('pages/contacts') %> 
+    <% break;
+
+
+
+    default: %>
+    <%- include('pages/error') %>
+    <% break;
+} %>
+
+
+
 <%- include('footer-template') %>

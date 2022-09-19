@@ -69,5 +69,14 @@ function showNextChoosen(h) {
 }
 
 function clearActiveChoosen() {
+<<<<<<< HEAD
     document.querySelector('.sub-catalog.active')?.classList.toggle('active')
 }
+=======
+    document.querySelectorAll('.sub-catalog.active')?.classList.remove('active')
+}
+
+
+
+function naTriBukvi() {}
+>>>>>>> 479a128a9316485a46dd47e450712a5cfb15c023
