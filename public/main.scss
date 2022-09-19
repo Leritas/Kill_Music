@@ -428,30 +428,30 @@ header {
             flex-direction: column;
             align-items: start;
 
-            a{
-                h1{
+            a {
+                h1 {
                     font-size: 30px;
                     font-weight: unset;
                     cursor: pointer;
                     transition: color .2s;
-    
-                    &:hover{
-                        color: $primary-orange;
-                    }
-                }
-    
-                span{
-                    font-size: 24px;
-                    color: #333;
-                    cursor: pointer;
-                    transition: color .2s;
-    
+
                     &:hover {
                         color: $primary-orange;
                     }
                 }
-    
-                .more{
+
+                span {
+                    font-size: 24px;
+                    color: #333;
+                    cursor: pointer;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $primary-orange;
+                    }
+                }
+
+                .more {
                     color: $primary-orange;
                 }
             }
@@ -598,48 +598,19 @@ header {
         transition: margin-left .3s;
 
 
-        .catalog {
-            width: 100%;
-            background: red;
-            overflow-y: scroll;
-            transition: max-height .3s;
-            display: block;
 
-            &::-webkit-scrollbar {
-                width: 0;
-            }
 
-            .sub-catalog {
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .sub-catalog {
+            display: none;
+            flex-direction: column;
+            align-items: start;
+
+            &.active {
                 display: flex;
-                flex-direction: column;
-                align-items: start;
-                background: grey;
-
-                .next {
-                    display: none;
-
-                    &.active {
-                        display: flex;
-                    }
-                }
-            }
-        }
-
-        .second-layer {
-            .sub-catalog {
-                span {
-                    display: none;
-                }
-            }
-        }
-
-        .therd-layer {
-            .sub-catalog {
-                display: none;
-
-                &.active {
-                    display: flex;
-                }
             }
         }
 
@@ -781,9 +752,7 @@ header {
     }
 }
 
-.main{
-    
-}
+.main {}
 
 //wrap of body
 .wrap {

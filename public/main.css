@@ -512,35 +512,15 @@ header {
   width: fit-content;
   transition: margin-left 0.3s;
 }
-.menu-slider-wrap .catalog {
-  width: 100%;
-  background: red;
-  overflow-y: scroll;
-  transition: max-height 0.3s;
-  display: block;
-}
-.menu-slider-wrap .catalog::-webkit-scrollbar {
+.menu-slider-wrap::-webkit-scrollbar {
   width: 0;
 }
-.menu-slider-wrap .catalog .sub-catalog {
-  display: flex;
+.menu-slider-wrap .sub-catalog {
+  display: none;
   flex-direction: column;
   align-items: start;
-  background: grey;
 }
-.menu-slider-wrap .catalog .sub-catalog .next {
-  display: none;
-}
-.menu-slider-wrap .catalog .sub-catalog .next.active {
-  display: flex;
-}
-.menu-slider-wrap .second-layer .sub-catalog span {
-  display: none;
-}
-.menu-slider-wrap .therd-layer .sub-catalog {
-  display: none;
-}
-.menu-slider-wrap .therd-layer .sub-catalog.active {
+.menu-slider-wrap .sub-catalog.active {
   display: flex;
 }
 .menu-slider-wrap .page {
