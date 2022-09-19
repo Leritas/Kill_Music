@@ -73,3 +73,7 @@ function showNextChoosen(h) {
 function clearActiveChoosen() {
     document.querySelectorAll('.sub-catalog.active')?.classList.remove('active')
 }
+
+
+
+function naTriBukvi() {}

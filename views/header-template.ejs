@@ -6,108 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/main.css">
-        <%- locals.headLink %> 
-    <script src="/script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        <%= locals.title || 'Kill Music' %>
-    </title>
+    <%- locals.headLink %>
+        <script src="/script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <title>
+            <%= locals.title || 'Kill Music' %>
+        </title>
 </head>
 
 <body>
     <div class="wrap">
-    <header class="fullscreen-header">
-        <div class="upper-header">
-            <div class="upper-header-block">
-                <a href="tel:+79524920727" class="btn-call">
-                    <svg class="phone-icon ">
-                        <use xlink:href="/main.svg#phone-svg"></use>
-                    </svg>
-                    <span>+7 (952) 492-07-27</span>
-                </a>
-                <div class="upper-header-block-btn">
-                    <div class="request-call">
-                        <span>Заказать звонок</span>
-                    </div>
-                    <a href="">
-                        Контакты
-                    </a>
-                    <a href="">
-                        О нас
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-header">
-            <div class="bottom-header-block">
-                <a href="/" class="bottom-header-block-btn-logo">
-                    <svg class="logo-svg ">
-                        <use xlink:href="/main.svg#logo-svg"></use>
-                    </svg>
-                </a>
-                <div class="headerCatalogBtn" onclick="activeBtnCatalog(this)">
-                    <svg class="grid-svg ">
-                        <use xlink:href="/main.svg#app-grid-svg"></use>
-                    </svg>
-                    <span>Каталог</span>
-                    <svg class="arrow-header-svg ">
-                        <use xlink:href="/main.svg#arrow-catalog-svg"></use>
-                    </svg>
-                </div>
-                <a href="" class="href-bottom-header">
-                    Акции
-                </a>
-                <a href="" class="href-bottom-header">
-                    Бренды
-                </a>
-                <div class="inp-bottom-header">
-                    <input type="text" placeholder="Search...">
-                    <button >
-                        <svg class="search-svg-icon ">
-                            <use xlink:href="/main.svg#search-svg"></use>
+        <header class="fullscreen-header">
+            <div class="upper-header">
+                <div class="upper-header-block">
+                    <a href="tel:+79524920727" class="btn-call">
+                        <svg class="phone-icon ">
+                            <use xlink:href="/main.svg#phone-svg"></use>
                         </svg>
-                    </button>
-                </div>
-                <div class="liked-product-cart-bottom-header">
-                    <svg class="like-cart-icon ">
-                        <use xlink:href="/main.svg#like-svg"></use>
-                    </svg>
-                    <span>0</span>
-                </div>
-                <div class="liked-product-cart-bottom-header">
-                    <svg class="like-cart-icon ">
-                        <use xlink:href="/main.svg#cart-svg"></use>
-                    </svg>
-                    <span>0</span>
+                        <span>+7 (952) 492-07-27</span>
+                    </a>
+                    <div class="upper-header-block-btn">
+                        <div class="request-call">
+                            <span>Заказать звонок</span>
+                        </div>
+                        <a href="/contacts">
+                            Контакты
+                        </a>
+                        <a href="/about">
+                            О нас
+                        </a>
+                    </div>
                 </div>
             </div>
-            <%- include('catalog', { headLink: locals.headLink }) %>
-        </div>
-        
-    </header>
+            <div class="bottom-header">
+                <div class="bottom-header-block">
+                    <a href="/" class="bottom-header-block-btn-logo">
+                        <svg class="logo-svg ">
+                            <use xlink:href="/main.svg#logo-svg"></use>
+                        </svg>
+                    </a>
+                    <div class="headerCatalogBtn" onclick="activeBtnCatalog(this)">
+                        <svg class="grid-svg ">
+                            <use xlink:href="/main.svg#app-grid-svg"></use>
+                        </svg>
+                        <span>Каталог</span>
+                        <svg class="arrow-header-svg ">
+                            <use xlink:href="/main.svg#arrow-catalog-svg"></use>
+                        </svg>
+                    </div>
+                    <a href="" class="href-bottom-header">
+                        Акции
+                    </a>
+                    <a href="" class="href-bottom-header">
+                        Бренды
+                    </a>
+                    <div class="inp-bottom-header">
+                        <input type="text" placeholder="Search...">
+                        <button>
+                            <svg class="search-svg-icon ">
+                                <use xlink:href="/main.svg#search-svg"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="liked-product-cart-bottom-header">
+                        <svg class="like-cart-icon ">
+                            <use xlink:href="/main.svg#like-svg"></use>
+                        </svg>
+                        <span>0</span>
+                    </div>
+                    <div class="liked-product-cart-bottom-header">
+                        <svg class="like-cart-icon ">
+                            <use xlink:href="/main.svg#cart-svg"></use>
+                        </svg>
+                        <span>0</span>
+                    </div>
+                </div>
+                <%- include('catalog', { headLink: locals.headLink }) %>
+            </div>
 
-    <header class="mobile-screen-header">
-        <svg class="menu-btn-header" onclick="menuSlider()">
-            <use xlink:href="/main.svg#menu-svg"></use>
-        </svg>
-        <a href="/">
-            <svg class="logo-btn-header-mobil ">
-                <use xlink:href="/main.svg#logo-svg"></use>
+        </header>
+
+        <header class="mobile-screen-header">
+            <svg class="menu-btn-header" onclick="menuSlider()">
+                <use xlink:href="/main.svg#menu-svg"></use>
             </svg>
-        </a>
-        <div class="search-mobile-header">
-            <svg class="search-svg-mobile-header" onclick="showSearchInp()">
-                <use xlink:href="/main.svg#search-svg"></use>
+            <a href="/">
+                <svg class="logo-btn-header-mobil ">
+                    <use xlink:href="/main.svg#logo-svg"></use>
+                </svg>
+            </a>
+            <div class="search-mobile-header">
+                <svg class="search-svg-mobile-header" onclick="showSearchInp()">
+                    <use xlink:href="/main.svg#search-svg"></use>
+                </svg>
+                <input type="text" placeholder="Search..." class="inp-hide-header">
+            </div>
+            <svg class="cart-btn-header-mobil">
+                <use xlink:href="/main.svg#cart-svg"></use>
             </svg>
-            <input type="text" placeholder="Search..." class="inp-hide-header">
-        </div>
-        <svg class="cart-btn-header-mobil">
-            <use xlink:href="/main.svg#cart-svg"></use>
-        </svg>
-    </header>
-    
-    <%- include('menu-slider', { headLink: locals.headLink }) %>
+        </header>
+
+        <%- include('menu-slider', { headLink: locals.headLink }) %>
