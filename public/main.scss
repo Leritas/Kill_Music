@@ -189,6 +189,7 @@ header {
     }
 
     .bottom-header{
+        position: relative;
         width: 100%;
         height: 128px;
         border-top: 1px solid whitesmoke;
@@ -208,6 +209,7 @@ header {
             }
 
             .headerCatalogBtn{
+                position: relative;
                 display: flex;
                 width: 175px;
                 height: 50px;
@@ -497,13 +499,14 @@ header {
 .block-screen {
     opacity: 0;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: -100px;
     left: 0;
     background: rgba(150, 150, 150, .7);
     z-index: 99;
+    padding-bottom: 100px;
 
     &.active {
         opacity: 1;
@@ -512,15 +515,16 @@ header {
 }
 
 .menu-slider {
-    position: absolute;
+    position: fixed;
     top: 0;
-    bottom: 0;
+    bottom: -100px;
     left: -100%;
     width: 300px;
     background: white;
     overflow: hidden;
     transition: left .2s;
     z-index: 100;
+    padding-bottom: 100px;
 
     &.active {
         left: 0;
@@ -668,10 +672,86 @@ header {
     }
 }
 
+.catalog{
+    position: absolute;
+    width: 100%;
+    max-height: 0;
+    background: white;
+    overflow-y: scroll;
+    transition: max-height .3s;
+
+    &.active{
+        max-height: calc(100vh - 192px);
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+      }
+
+    .catalog-flex{
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        width: 80%;
+        height: 300px;
+        margin: auto;
+
+        .catalog-one{
+            width: 300px;
+            height: 100px;
+            text-align: left;
+
+            .catalog-first{
+                width: 100%;
+                height: 50px;
+                color: black;
+                line-height: 50px;
+                font-size: 30px;
+
+                span{
+                    cursor: pointer;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $primary-orange;
+                    }
+                }
+            }
+
+            .catalog-second{
+                width: 100%;
+                height: 30px;
+                color: grey;
+                line-height: 30px;
+                font-size: 20px;
+
+                span{
+                    cursor: pointer;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $primary-orange;
+                    }
+                }
+            }
+
+            .more-btn-catalog{
+                width: 100%;
+                height: 30px;
+                color: $primary-orange;
+                line-height: 30px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 //wrap of body
 .wrap{
     width: 100%;
-    min-height: calc(100vh - 270px);
+    min-height: calc(100vh - 269px);
 }
 
 footer {
