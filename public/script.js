@@ -1,5 +1,7 @@
 let pageCount = 0
 let pageMarginLeft = 0
+let sliderCount = 0
+let maxLenghtSlider = -1280 * document.querySelector('.scroll-img').querySelectorAll('img').length + 1280
 
 window.addEventListener('resize', closeMenuPage);
 
@@ -70,4 +72,23 @@ function showNextChoosen(h) {
 
 function clearActiveChoosen() {
     document.querySelector('.sub-catalog.active')?.classList.toggle('active')
+}
+
+function scrollSliderBtn(div){
+    if (div.className.match('back')){
+        if (sliderCount != 0){
+            sliderCount +=1280;
+        } else {
+            sliderCount = maxLenghtSlider; 
+        }
+        document.querySelector('.scroll-img').style['margin-left'] = sliderCount + 'px';
+    } else if (div.className.match('next')){
+        if (sliderCount != maxLenghtSlider){
+            sliderCount -=1280;
+        } else {
+            sliderCount = 0; 
+        }
+        document.querySelector('.scroll-img').style['margin-left'] = sliderCount + 'px';
+    }
+    
 }
