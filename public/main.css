@@ -730,6 +730,15 @@ header {
 .menu-slider-wrap .sub-catalog.active {
   display: flex;
 }
+.menu-slider-wrap .sub-catalog span {
+  font-size: 18px;
+  line-height: 64px;
+  margin-left: 12px;
+  transition: color 0.2s;
+}
+.menu-slider-wrap .sub-catalog span:hover {
+  color: #FF6600;
+}
 .menu-slider-wrap .page {
   width: 300px;
 }
