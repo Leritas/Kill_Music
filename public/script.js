@@ -2,10 +2,7 @@ let pageCount = 0
 let pageMarginLeft = 0
 let sliderCount = 0
 let maxLenghtSlider = -1280 * document.querySelector('.scroll-img')?.querySelectorAll('img').length + 1280
-<<<<<<< HEAD
 window.setInterval(function(){scrollSliderBtn(document.querySelector('.next'))}, 10000)
-=======
->>>>>>> 44ff3482cc1ad3dca6798c8e1492519ae18ea1d1
 
 window.addEventListener('resize', closeMenuPage);
 
