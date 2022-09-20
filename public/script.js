@@ -1,7 +1,7 @@
 let pageCount = 0
 let pageMarginLeft = 0
 let sliderCount = 0
-let maxLenghtSlider = -1280 * document.querySelector('.scroll-img').querySelectorAll('img').length + 1280
+let maxLenghtSlider = -1280 * document.querySelector('.scroll-img')?.querySelectorAll('img').length + 1280
 
 window.addEventListener('resize', closeMenuPage);
 
@@ -52,10 +52,11 @@ function scrollPageRight(div){
 }
 
 function scrollPageLeft(div) {
-    clearActiveChoosen()
+    showBackChoosen(div)
     pageCount -= 1;
     pageMarginLeft -= -300;
     document.querySelector('.menu-slider-wrap').style['margin-left'] = pageMarginLeft + 'px';
+
 }
 
 function showDropdownMenuFooter(div){
@@ -64,10 +65,23 @@ function showDropdownMenuFooter(div){
 }
 
 function showNextChoosen(h) {
-    let text = h.innerHTML;
-   Array.from(h.closest('.page').nextElementSibling.querySelectorAll('h1'))
-   .find(el => el.textContent === text).closest('.sub-catalog').classList.toggle('active')
-   
+    if (h.className.match('menu-item')) {
+        h = h.querySelector('span')
+        let text = h.innerHTML;
+        Array.from(h.closest('.page').nextElementSibling.querySelectorAll('h3'))
+        .find(el => el.textContent === text).closest('.sub-catalog').classList.toggle('active')
+    } else {
+        let text = h.innerHTML;
+        Array.from(h.closest('.page').nextElementSibling.querySelectorAll('h3'))
+        .find(el => el.textContent === text).closest('.sub-catalog').classList.toggle('active')
+    }
+}
+
+function showBackChoosen(div) {
+    let text = div.closest('.page')?.querySelector('.sub-catalog.active')?.querySelector('h3')?.textContent
+    clearActiveChoosen()
+    Array.from(div.closest('.page')?.previousElementSibling?.querySelectorAll('span'))
+        .find(el => el.textContent === text).closest('.sub-catalog')?.classList.toggle('active')
 }
 
 function clearActiveChoosen() {
