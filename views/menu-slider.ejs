@@ -14,12 +14,12 @@
                     <use xlink:href="/main.svg#arrow-catalog-svg"></use>
                 </svg>
             </div>
-            <a href="">
+            <a href="/sales">
                 <div class="btn-menu-a">
                     <span>Акции</span>
                 </div>
             </a>
-            <a href="">
+            <a href="/brends">
                 <div class="btn-menu-a">
                     <span>Бренды</span>
                 </div>
@@ -53,39 +53,6 @@
                 </svg>
             </a>
         </div>
-
-
-        <div class="second-layer page">        
-            <div class="back-btn-menu" onclick="scrollPageLeft(this)">
-                <svg class="arrow-back-svg-icon">
-                    <use xlink:href="/main.svg#arrow-back-svg"></use>
-                </svg>
-                <span>Назад</span>
-            </div>
-            <h3></h3>
-            <div class="menu-item" onclick="scrollPageRight(this)">
-                <span>Каталог2</span>
-                <svg class="more-catalog-svg">
-                    <use xlink:href="/main.svg#arrow-catalog-svg"></use>
-                </svg>
-            </div>
-            <%- include('catalog', { headLink: locals.headLink }) %>
-        </div>
-        <div class="therd-layer page">        
-            <div class="back-btn-menu" onclick="scrollPageLeft(this)">
-                <svg class="arrow-back-svg-icon">
-                    <use xlink:href="/main.svg#arrow-back-svg"></use>
-                </svg>
-                <span>Назад</span>
-            </div>
-            <h3></h3>
-            <div class="menu-item" onclick="scrollPageRight(this)">
-                <span>Каталог2</span>
-                <svg class="more-catalog-svg">
-                    <use xlink:href="/main.svg#arrow-catalog-svg"></use>
-                </svg>
-            </div>
-            <%- include('catalog', { headLink: locals.headLink }) %>
-        </div>
+        <%- include('mobile-catalog', { headLink: locals.headLink }) %>
     </div>
 </div>
