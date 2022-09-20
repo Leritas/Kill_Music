@@ -93,6 +93,105 @@ a:focus-visible {
   outline: 0;
 }
 
+.book-call-screen {
+  position: absolute;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(153, 153, 153, 0.4);
+  z-index: 100;
+}
+.book-call-screen.active {
+  display: flex;
+}
+
+.book-call {
+  position: absolute;
+  display: none;
+  top: calc(50% - 200px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 400px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(153, 153, 153, 0.8);
+  overflow-y: scroll;
+  z-index: 101;
+}
+.book-call.active {
+  display: block;
+}
+.book-call::-webkit-scrollbar {
+  width: 0px;
+}
+.book-call .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 5px;
+  background: rgba(0, 0, 0, 0);
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.book-call .close-btn svg {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  stroke: black;
+  transition: stroke 0.2s;
+}
+.book-call .close-btn:hover {
+  background: rgba(153, 153, 153, 0.4);
+}
+.book-call .close-btn:hover svg {
+  stroke: #FF6600;
+}
+.book-call h1 {
+  font-weight: inherit;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.book-call .inp {
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  text-align: left;
+}
+.book-call .inp span {
+  font-size: 18px;
+}
+.book-call .inp input {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 10px;
+  background: whitesmoke;
+  border: 1px solid lightgrey;
+  transition: 0.2s;
+}
+.book-call .inp input:hover {
+  border-color: grey;
+}
+.book-call .inp input:focus-visible {
+  outline: 0;
+}
+.book-call .book-call-btn {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  margin-top: 40px;
+  border: 0px;
+  border-radius: 5px;
+  background: #FF6600;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+}
+
 header {
   box-shadow: 0px 5px 10px rgba(186, 186, 186, 0.2);
   z-index: 10;
@@ -394,6 +493,110 @@ header {
 }
 .fullscreen-header .catalog .sub-catalog a .more {
   color: #FF6600;
+}
+.fullscreen-header .favorite-menu {
+  position: absolute;
+  right: 20px;
+  width: 400px;
+  max-height: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: white;
+  transition: max-height 0.2s;
+  overflow: hidden;
+}
+.fullscreen-header .favorite-menu.active {
+  max-height: 421px;
+  border: 1px solid lightgrey;
+  border-top: 0;
+}
+.fullscreen-header .favorite-menu .upper-block {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+}
+.fullscreen-header .favorite-menu .body-favorite {
+  width: 100%;
+  height: 300px;
+  background: white;
+  border-top: 1px solid whitesmoke;
+  overflow-y: scroll;
+}
+.fullscreen-header .favorite-menu .body-favorite::-webkit-scrollbar {
+  width: 0;
+}
+.fullscreen-header .favorite-menu .body-favorite .items {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  padding: 5px;
+  transition: 0.2s;
+}
+.fullscreen-header .favorite-menu .body-favorite .items:hover {
+  background: rgba(153, 153, 153, 0.4);
+}
+.fullscreen-header .favorite-menu .body-favorite .items img {
+  width: 54px;
+  height: 54px;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .name {
+  display: flex;
+  flex-direction: column;
+  width: 208px;
+  height: 54px;
+  margin-left: 12px;
+  margin-right: 12px;
+  text-align: left;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .name a {
+  margin: 0;
+  font-weight: inherit;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .name a:hover {
+  color: #FF6600;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .name span {
+  color: grey;
+  font-size: 14px;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .icon {
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .icon svg {
+  width: 30px;
+  height: 30px;
+  margin: 12px;
+  transition: fill 0.2s;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .icon .stroke {
+  fill: none;
+  stroke: black;
+  transition: stroke 0.2s;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .icon:hover svg {
+  fill: #FF6600;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .icon:hover .stroke {
+  stroke: #FF6600;
+}
+.fullscreen-header .favorite-menu .btn-incart {
+  width: 100%;
+  height: 60px;
+  background: #FF6600;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  line-height: 60px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.fullscreen-header .favorite-menu .btn-incart:hover {
+  background: rgba(255, 102, 0, 0.8);
 }
 
 .mobile-screen-header {
@@ -739,7 +942,8 @@ header {
   font-size: 14px;
 }
 .body-contact .contact-block .map {
-  width: 60%;
+  width: 50%;
+  margin: 40px;
 }
 .body-contact .contact-block .map div {
   width: 100%;

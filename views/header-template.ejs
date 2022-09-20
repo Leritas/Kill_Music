@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <%- include('book-call', { headLink: locals.headLink }) %>
     <div class="wrap">
         <header class="fullscreen-header">
             <div class="upper-header">
@@ -30,7 +31,7 @@
                         <span>+7 (952) 492-07-27</span>
                     </a>
                     <div class="upper-header-block-btn">
-                        <div class="request-call">
+                        <div class="request-call" onclick="bookCall()">
                             <span>Заказать звонок</span>
                         </div>
                         <a href="/contacts">
@@ -73,7 +74,7 @@
                         </button>
                     </div>
                     <div class="liked-product-cart-bottom-header">
-                        <svg class="like-cart-icon ">
+                        <svg class="like-cart-icon" onclick="activeFavorite()">
                             <use xlink:href="/main.svg#like-svg"></use>
                         </svg>
                         <span>0</span>
@@ -86,8 +87,8 @@
                     </div>
                 </div>
                 <%- include('catalog', { headLink: locals.headLink }) %>
+                <%- include('favorite', { headLink: locals.headLink }) %>
             </div>
-
         </header>
 
         <header class="mobile-screen-header">

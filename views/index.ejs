@@ -1,6 +1,12 @@
 <%- include('header-template', { title: locals.title, activeHeader: locals.activeHeader, headLink: locals.headLink }) %>
 
-
+<% if (locals.page != 'main'){ %>
+    <div class="path-block">
+        <a href="/">Главная&nbsp</a>
+        <span>- Контакты</span><br><br>
+        <h1>Контакты</h1>
+    </div>
+<% } %>
 
 <%
 switch(locals.page) { 

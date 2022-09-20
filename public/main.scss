@@ -100,6 +100,118 @@ a {
 
 //header css
 
+.book-call-screen{
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(153, 153, 153, .4);
+    z-index: 100;
+
+    &.active{
+        display: flex;
+    }
+}
+.book-call{
+    position: absolute;
+    display: none;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 400px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(153, 153, 153, .8);
+    overflow-y: scroll;
+    z-index: 101;
+
+    &.active{
+        display: block;
+    }
+
+    &::-webkit-scrollbar{
+        width: 0px;
+    }
+
+    .close-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top-right-radius: 5px;
+        background: rgba(0, 0, 0, 0);
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        transition: .2s;
+
+        svg{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            stroke: black;
+            transition: stroke .2s;
+        }
+
+        &:hover{
+            background: rgba(153, 153, 153, .4);
+
+            svg{
+                stroke: $primary-orange;
+            }
+        }
+    }
+
+    h1{
+        font-weight: inherit;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+
+    .inp{
+        margin: auto;
+        margin-top: 20px;
+        width: 80%;
+        text-align: left;
+
+        span{
+            font-size: 18px;
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+            border-radius: 10px;
+            background: whitesmoke;
+            border: 1px solid lightgrey;
+            transition: .2s;
+
+            &:hover{
+                border-color: grey;
+            }
+
+            &:focus-visible{
+                outline: 0;
+            }
+        }
+    }
+
+    .book-call-btn{
+        width: 80%;
+        height: 50px;
+        margin: auto;
+        margin-top: 40px;
+        border: 0px;
+        border-radius: 5px;
+        background: $primary-orange;
+        line-height: 50px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
 header {
     box-shadow: 0px 5px 10px rgba(186, 186, 186, .2);
     z-index: 10;
@@ -460,6 +572,134 @@ header {
                 }
             }
         }
+    }
+
+    .favorite-menu{
+        position: absolute;
+        right: 20px;
+        width: 400px;
+        max-height: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: white;
+        transition: max-height .2s;
+        overflow: hidden;
+
+        &.active{
+            max-height: 421px;
+            border: 1px solid lightgrey;
+            border-top: 0;
+        }
+
+        .upper-block{
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            font-size: 22px;
+        }
+
+        .body-favorite{
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-top: 1px solid whitesmoke;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+
+            .items{
+                display: flex;
+                width: 100%;
+                height: 64px;
+                padding: 5px;
+                transition: .2s;                
+
+                &:hover {
+                    background: rgba(153, 153, 153, .4);
+                }
+
+                img{
+                    width: 54px;
+                    height: 54px;
+                }
+
+                .name{
+                    display: flex;
+                    flex-direction: column;
+                    width: 208px;
+                    height: 54px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    text-align: left;
+
+                    a{
+                        margin: 0;
+                        font-weight: inherit;
+                        font-size: 20px;
+                        transition: color .2s;
+
+                        &:hover{
+                            color: $primary-orange;
+                        }
+                    }
+
+                    span{
+                        color:grey;
+                        font-size: 14px;
+                    }
+                }
+
+                .icon{
+                    width: 54px;
+                    height: 54px;
+                    cursor: pointer;
+
+                    svg{
+                        width: 30px;
+                        height: 30px;
+                        margin: 12px;
+                        transition: fill .2s;
+                        
+                    }
+
+                    .stroke{
+                        fill: none;
+                        stroke: black;
+                        transition: stroke .2s;
+                    }
+
+                    &:hover{
+                        svg{
+                            fill: $primary-orange;
+                            
+                        }
+    
+                        .stroke{
+                            stroke: $primary-orange;
+                        }
+                    }
+
+                }
+            }
+        }
+        .btn-incart{
+            width: 100%;
+            height: 60px;
+            background: $primary-orange;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            line-height: 60px;
+            color: white;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover{
+                background: rgba(255, 102, 0, .8);;
+            }
+        }
+
     }
 }
 
@@ -880,7 +1120,8 @@ header {
         }
 
         .map{
-            width: 60%;
+            width: 50%;
+            margin: 40px;
 
             div{
                 width: 100%;

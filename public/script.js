@@ -1,7 +1,8 @@
 let pageCount = 0
 let pageMarginLeft = 0
 let sliderCount = 0
-let maxLenghtSlider = -1280 * document.querySelector('.scroll-img').querySelectorAll('img').length + 1280
+let maxLenghtSlider = -1280 * document.querySelector('.scroll-img')?.querySelectorAll('img').length + 1280
+window.setInterval(function(){scrollSliderBtn(document.querySelector('.next'))}, 10000)
 
 window.addEventListener('resize', closeMenuPage);
 
@@ -91,4 +92,13 @@ function scrollSliderBtn(div){
         document.querySelector('.scroll-img').style['margin-left'] = sliderCount + 'px';
     }
     
+}
+
+function bookCall(){
+    document.querySelector('.book-call-screen').classList.toggle('active')
+    document.querySelector('.book-call').classList.toggle('active')
+}
+
+function activeFavorite(){
+    document.querySelector('.favorite-menu').classList.toggle('active')
 }
