@@ -5,13 +5,6 @@ const port = 80
 const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database('./database/main.db')
 
-db.serialize(() => {
-  db.each("SELECT * FROM users", (err, row) => {
-      console.log(row);
-  });
-});
-
-db.close();
 
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
@@ -37,6 +30,8 @@ app.get('/contacts', (req, res) => {
 const itemsRouter = require('./routes/items')
 app.use('/items', itemsRouter)
 
+const adminRouter = require('./routes/admin')
+app.use('/admin', adminRouter)
 
 //Server start
 

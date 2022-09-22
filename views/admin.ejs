@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <title>Admin panel | Ev1l Leritas</title>
+</head>
+<body>
+
+<% if (locals.auth == true) {%>
+    authorized
+
+
+
+
+<% } else { %> 
+    <form action="" method="post" class="auth">
+        <h1>Войти в <br>Панель управления</h1>
+        <%- locals.say %>
+        <input type="login" name="login" id="login" required>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Войти</button>
+    </form>
+<% } %>
+ 
+
+</body>
+</html>
