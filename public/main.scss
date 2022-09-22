@@ -37,6 +37,7 @@ html:focus-within {
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
+    caret-color: $primary-orange;
 }
 
 /* A elements that don't have a class get default styles */
@@ -577,32 +578,22 @@ header {
     .favorite-menu{
         position: absolute;
         right: 20px;
-        width: 400px;
+        width: 600px;
         max-height: 0px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
         background: white;
-        transition: max-height .2s;
         overflow: hidden;
+        box-shadow: 0 0 10px rgba(153, 153, 153, .4);
+        transition: max-height .2s;
 
         &.active{
-            max-height: 421px;
-            border: 1px solid lightgrey;
-            border-top: 0;
-        }
-
-        .upper-block{
-            width: 100%;
-            height: 60px;
-            line-height: 60px;
-            font-size: 22px;
+            max-height: 428px;
         }
 
         .body-favorite{
             width: 100%;
-            height: 300px;
-            background: white;
-            border-top: 1px solid whitesmoke;
+            height: 364px;
             overflow-y: scroll;
 
             &::-webkit-scrollbar{
@@ -612,8 +603,9 @@ header {
             .items{
                 display: flex;
                 width: 100%;
-                height: 64px;
-                padding: 5px;
+                height: 150px;
+                padding: 12px;
+                border-bottom: 1px solid lightgrey;
                 transition: .2s;                
 
                 &:hover {
@@ -621,23 +613,25 @@ header {
                 }
 
                 img{
-                    width: 54px;
-                    height: 54px;
+                    width: 100px;
+                    height: 100px;
+                    margin: 13px;
+                    margin-left: 0;
                 }
 
                 .name{
                     display: flex;
                     flex-direction: column;
-                    width: 208px;
-                    height: 54px;
-                    margin-left: 12px;
-                    margin-right: 12px;
+                    width: 340px;
+                    height: 124px;
+                    padding-top: 13px;
+                    padding-bottom: 13px;
                     text-align: left;
 
                     a{
                         margin: 0;
                         font-weight: inherit;
-                        font-size: 20px;
+                        font-size: 24px;
                         transition: color .2s;
 
                         &:hover{
@@ -647,56 +641,219 @@ header {
 
                     span{
                         color:grey;
-                        font-size: 14px;
+                        font-size: 18px;
                     }
                 }
 
-                .icon{
-                    width: 54px;
-                    height: 54px;
-                    cursor: pointer;
+                .right{
+                    width: 120px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    margin-top: 13px;
+                    margin-bottom: 13px;
 
-                    svg{
-                        width: 30px;
-                        height: 30px;
-                        margin: 12px;
-                        transition: fill .2s;
-                        
+                    span{
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                        font-weight: bold;
+                        font-size: 22px;
                     }
 
-                    .stroke{
-                        fill: none;
-                        stroke: black;
-                        transition: stroke .2s;
-                    }
-
-                    &:hover{
+                    .icon{
+                        width: 54px;
+                        height: 54px;
+                        margin-bottom: 0;
+                        margin-top: 14px;
+                        cursor: pointer;
+    
                         svg{
-                            fill: $primary-orange;
+                            width: 30px;
+                            height: 30px;
+                            margin: 12px;
+                            transition: fill .2s;
                             
                         }
     
                         .stroke{
-                            stroke: $primary-orange;
+                            fill: none;
+                            stroke: black;
+                            transition: stroke .2s;
                         }
+    
+                        &:hover{
+                            svg{
+                                fill: $primary-orange;
+                                
+                            }
+        
+                            .stroke{
+                                stroke: $primary-orange;
+                            }
+                        }
+    
                     }
-
                 }
             }
         }
         .btn-incart{
             width: 100%;
             height: 60px;
-            background: $primary-orange;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            box-shadow: 0 0 5px rgba(153, 153, 153, .4);
+            border-top: 1px solid whitesmoke;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
             line-height: 60px;
-            color: white;
+            color: $primary-orange;
             cursor: pointer;
-            transition: .2s;
+            transition: .4s;
 
             &:hover{
-                background: rgba(255, 102, 0, .8);;
+                color: white;
+                background: $primary-orange;
+            }
+        }
+
+    }
+
+    .cart-menu{
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        width: 600px;
+        height: 428px;
+        right: 20px;
+        background: white;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-shadow: 0 0 10px rgba(153, 153, 153, .4);
+        transition: opacity .2s ease-in-out;
+
+        &.active{
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-screen{
+            width: 100%;
+            height: 300px;
+            border-bottom: 1px solid lightgrey;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar{
+                width: 0px;
+            }
+
+            .item{
+                display: flex;
+                width: 100%;
+                height: 150px;
+                border-bottom: 1px solid lightgrey;
+
+                a{
+                    display: flex;
+                    width: calc(100% - 50px);
+
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        margin: 25px;
+                        margin-left: 12px;
+                        margin-right: 12px;
+                    }                    
+                
+    
+                    .info{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: calc(100% - 150px);
+                        height: 150px;
+                        padding-top: 25px;
+                        padding-bottom: 25px;
+                        text-align: left;
+    
+                        h2{
+                            font-size: 24px;
+                            font-weight: inherit;
+                        }
+    
+                        span{
+                            color: grey;
+                        }
+                    }
+                }
+
+                svg{
+                    stroke:black;
+                    width: 26px;
+                    height: 26px;
+                    cursor: pointer;
+                    margin: 12px;
+                    margin-top: 25px;
+                    transition: stroke .2s;
+
+                    &:hover{
+                        stroke: $primary-orange;
+                    }
+                }
+            }
+        }
+
+        .info-cart{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 64px;
+            border-bottom: 1px solid lightgrey;
+
+            .clear{
+                display: flex;
+                height: 30px;
+                margin-top: 16px;
+                line-height: 30px;
+                cursor: pointer;
+                stroke: grey;
+                color: grey;
+                transition: .4s;
+
+                svg{
+                    width: 24px;
+                    height: 24px;
+                    margin: 3px;
+                }
+
+                &:hover{
+                    color: $primary-orange;
+                    stroke: $primary-orange;
+                }
+            }
+
+            .total{
+                height: 30px;
+                margin-top: 16px;
+                margin-right: 12px;
+                line-height: 30px;
+
+                span{
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .open-cart{
+            width: 100%;
+            height: 64px;
+            line-height: 64px;
+            color: $primary-orange;
+            transition: .4s;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            cursor:pointer;
+
+            &:hover{
+                background: $primary-orange;
+                color: white;
             }
         }
 

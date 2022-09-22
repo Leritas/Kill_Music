@@ -34,6 +34,7 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  caret-color: #FF6600;
 }
 
 /* A elements that don't have a class get default styles */
@@ -497,30 +498,21 @@ header {
 .fullscreen-header .favorite-menu {
   position: absolute;
   right: 20px;
-  width: 400px;
+  width: 600px;
   max-height: 0px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background: white;
-  transition: max-height 0.2s;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(153, 153, 153, 0.4);
+  transition: max-height 0.2s;
 }
 .fullscreen-header .favorite-menu.active {
-  max-height: 421px;
-  border: 1px solid lightgrey;
-  border-top: 0;
-}
-.fullscreen-header .favorite-menu .upper-block {
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
+  max-height: 428px;
 }
 .fullscreen-header .favorite-menu .body-favorite {
   width: 100%;
-  height: 300px;
-  background: white;
-  border-top: 1px solid whitesmoke;
+  height: 364px;
   overflow-y: scroll;
 }
 .fullscreen-header .favorite-menu .body-favorite::-webkit-scrollbar {
@@ -529,30 +521,33 @@ header {
 .fullscreen-header .favorite-menu .body-favorite .items {
   display: flex;
   width: 100%;
-  height: 64px;
-  padding: 5px;
+  height: 150px;
+  padding: 12px;
+  border-bottom: 1px solid lightgrey;
   transition: 0.2s;
 }
 .fullscreen-header .favorite-menu .body-favorite .items:hover {
   background: rgba(153, 153, 153, 0.4);
 }
 .fullscreen-header .favorite-menu .body-favorite .items img {
-  width: 54px;
-  height: 54px;
+  width: 100px;
+  height: 100px;
+  margin: 13px;
+  margin-left: 0;
 }
 .fullscreen-header .favorite-menu .body-favorite .items .name {
   display: flex;
   flex-direction: column;
-  width: 208px;
-  height: 54px;
-  margin-left: 12px;
-  margin-right: 12px;
+  width: 340px;
+  height: 124px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   text-align: left;
 }
 .fullscreen-header .favorite-menu .body-favorite .items .name a {
   margin: 0;
   font-weight: inherit;
-  font-size: 20px;
+  font-size: 24px;
   transition: color 0.2s;
 }
 .fullscreen-header .favorite-menu .body-favorite .items .name a:hover {
@@ -560,43 +555,182 @@ header {
 }
 .fullscreen-header .favorite-menu .body-favorite .items .name span {
   color: grey;
-  font-size: 14px;
+  font-size: 18px;
 }
-.fullscreen-header .favorite-menu .body-favorite .items .icon {
+.fullscreen-header .favorite-menu .body-favorite .items .right {
+  width: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .right span {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-weight: bold;
+  font-size: 22px;
+}
+.fullscreen-header .favorite-menu .body-favorite .items .right .icon {
   width: 54px;
   height: 54px;
+  margin-bottom: 0;
+  margin-top: 14px;
   cursor: pointer;
 }
-.fullscreen-header .favorite-menu .body-favorite .items .icon svg {
+.fullscreen-header .favorite-menu .body-favorite .items .right .icon svg {
   width: 30px;
   height: 30px;
   margin: 12px;
   transition: fill 0.2s;
 }
-.fullscreen-header .favorite-menu .body-favorite .items .icon .stroke {
+.fullscreen-header .favorite-menu .body-favorite .items .right .icon .stroke {
   fill: none;
   stroke: black;
   transition: stroke 0.2s;
 }
-.fullscreen-header .favorite-menu .body-favorite .items .icon:hover svg {
+.fullscreen-header .favorite-menu .body-favorite .items .right .icon:hover svg {
   fill: #FF6600;
 }
-.fullscreen-header .favorite-menu .body-favorite .items .icon:hover .stroke {
+.fullscreen-header .favorite-menu .body-favorite .items .right .icon:hover .stroke {
   stroke: #FF6600;
 }
 .fullscreen-header .favorite-menu .btn-incart {
   width: 100%;
   height: 60px;
-  background: #FF6600;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 5px rgba(153, 153, 153, 0.4);
+  border-top: 1px solid whitesmoke;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   line-height: 60px;
-  color: white;
+  color: #FF6600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .fullscreen-header .favorite-menu .btn-incart:hover {
-  background: rgba(255, 102, 0, 0.8);
+  color: white;
+  background: #FF6600;
+}
+.fullscreen-header .cart-menu {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 600px;
+  height: 428px;
+  right: 20px;
+  background: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 0 10px rgba(153, 153, 153, 0.4);
+  transition: opacity 0.2s ease-in-out;
+}
+.fullscreen-header .cart-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.fullscreen-header .cart-menu .cart-screen {
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid lightgrey;
+  overflow-y: scroll;
+}
+.fullscreen-header .cart-menu .cart-screen::-webkit-scrollbar {
+  width: 0px;
+}
+.fullscreen-header .cart-menu .cart-screen .item {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px solid lightgrey;
+}
+.fullscreen-header .cart-menu .cart-screen .item a {
+  display: flex;
+  width: calc(100% - 50px);
+}
+.fullscreen-header .cart-menu .cart-screen .item a img {
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.fullscreen-header .cart-menu .cart-screen .item a .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 150px);
+  height: 150px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: left;
+}
+.fullscreen-header .cart-menu .cart-screen .item a .info h2 {
+  font-size: 24px;
+  font-weight: inherit;
+}
+.fullscreen-header .cart-menu .cart-screen .item a .info span {
+  color: grey;
+}
+.fullscreen-header .cart-menu .cart-screen .item svg {
+  stroke: black;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  margin: 12px;
+  margin-top: 25px;
+  transition: stroke 0.2s;
+}
+.fullscreen-header .cart-menu .cart-screen .item svg:hover {
+  stroke: #FF6600;
+}
+.fullscreen-header .cart-menu .info-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid lightgrey;
+}
+.fullscreen-header .cart-menu .info-cart .clear {
+  display: flex;
+  height: 30px;
+  margin-top: 16px;
+  line-height: 30px;
+  cursor: pointer;
+  stroke: grey;
+  color: grey;
+  transition: 0.4s;
+}
+.fullscreen-header .cart-menu .info-cart .clear svg {
+  width: 24px;
+  height: 24px;
+  margin: 3px;
+}
+.fullscreen-header .cart-menu .info-cart .clear:hover {
+  color: #FF6600;
+  stroke: #FF6600;
+}
+.fullscreen-header .cart-menu .info-cart .total {
+  height: 30px;
+  margin-top: 16px;
+  margin-right: 12px;
+  line-height: 30px;
+}
+.fullscreen-header .cart-menu .info-cart .total span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.fullscreen-header .cart-menu .open-cart {
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  color: #FF6600;
+  transition: 0.4s;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+.fullscreen-header .cart-menu .open-cart:hover {
+  background: #FF6600;
+  color: white;
 }
 
 .mobile-screen-header {

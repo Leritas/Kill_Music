@@ -116,3 +116,7 @@ function bookCall(){
 function activeFavorite(){
     document.querySelector('.favorite-menu').classList.toggle('active')
 }
+
+function cartMenu(){
+    document.querySelector('.cart-menu').classList.toggle('active')
+}

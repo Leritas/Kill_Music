@@ -79,7 +79,7 @@
                         </svg>
                         <span>0</span>
                     </div>
-                    <div class="liked-product-cart-bottom-header">
+                    <div class="liked-product-cart-bottom-header" onclick="cartMenu()">
                         <svg class="like-cart-icon ">
                             <use xlink:href="/main.svg#cart-svg"></use>
                         </svg>
@@ -88,6 +88,7 @@
                 </div>
                 <%- include('catalog', { headLink: locals.headLink }) %>
                 <%- include('favorite', { headLink: locals.headLink }) %>
+                <%- include('cart-menu', { headLink: locals.headLink }) %>
             </div>
         </header>
 
