@@ -1109,9 +1109,9 @@ header {
   color: #FF6600;
 }
 .main .home-page .body {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   width: 80%;
   margin: auto;
 }
@@ -1232,7 +1232,7 @@ header {
 .main .home-page .body .item .info .in-cart:hover {
   color: grey;
 }
-.main .home-page .body .more {
+.main .home-page .more {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -1240,28 +1240,30 @@ header {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.main .home-page .body .more::before {
+.main .home-page .more::before {
   content: "";
   margin-top: 32px;
-  width: 40%;
+  margin-left: 5%;
+  width: 35%;
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
 }
-.main .home-page .body .more::after {
+.main .home-page .more::after {
   content: "";
   margin-top: 32px;
-  width: 40%;
+  margin-right: 5%;
+  width: 35%;
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
 }
-.main .home-page .body .more a {
+.main .home-page .more a {
   height: 64px;
   line-height: 64px;
   font-size: 20px;
   color: grey;
   transition: color 0.2s;
 }
-.main .home-page .body .more a:hover {
+.main .home-page .more a:hover {
   color: #FF6600;
 }
 
@@ -1473,6 +1475,9 @@ footer .line-footer div a .vk-icon-footer:hover {
     width: 100%;
     padding: 12px;
   }
+  .main .home-page .body {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media screen and (max-width: 970px) {
   .fullscreen-header {
@@ -1650,5 +1655,10 @@ footer .line-footer div a .vk-icon-footer:hover {
 @media screen and (max-width: 1700px) {
   .main .home-page .body {
     width: 100%;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .main .home-page .body {
+    grid-template-columns: repeat(5, 1fr);
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1316,9 +1316,9 @@ header {
         }
 
         .body{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-items: center;
             width: 80%;
             margin: auto;
 
@@ -1460,39 +1460,42 @@ header {
                     }
                 }
             }
-            .more{
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
+           
+        }
+        .more{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 64px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            &::before{
+                content: "";
+                margin-top: 32px;
+                margin-left: 5%;
+                width: 35%;
+                height: 1px;
+                background: rgba(0, 0, 0, .2);
+            }
+
+            &::after{
+                content: "";
+                margin-top: 32px;
+                margin-right: 5%;
+                width: 35%;
+                height: 1px;
+                background: rgba(0, 0, 0, .2);
+            }
+            
+            a{
                 height: 64px;
-                margin-top: 40px;
-                margin-bottom: 40px;
-                &::before{
-                    content: "";
-                    margin-top: 32px;
-                    width: 40%;
-                    height: 1px;
-                    background: rgba(0, 0, 0, .2);
-                }
+                line-height: 64px;
+                font-size: 20px;
+                color: grey;
+                transition: color .2s;
 
-                &::after{
-                    content: "";
-                    margin-top: 32px;
-                    width: 40%;
-                    height: 1px;
-                    background: rgba(0, 0, 0, .2);
-                }
-                
-                a{
-                    height: 64px;
-                    line-height: 64px;
-                    font-size: 20px;
-                    color: grey;
-                    transition: color .2s;
-
-                    &:hover{
-                        color:$primary-orange;
-                    }
+                &:hover{
+                    color:$primary-orange;
                 }
             }
         }
@@ -1770,7 +1773,11 @@ footer {
                 width: 100%;
                 padding: 12px;
             }
+             .body {
+            grid-template-columns: repeat(3, 1fr);
         }
+        }
+       
     }
 }
 
@@ -2015,6 +2022,16 @@ footer {
         .home-page{
             .body{
                 width: 100%;
+
+            }
+        }
+    }
+}
+@media  screen and (min-width: 2000px){
+    .main{   
+        .home-page{
+            .body{
+                grid-template-columns: repeat(5, 1fr);
             }
         }
     }
