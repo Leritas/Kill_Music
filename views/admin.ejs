@@ -18,9 +18,14 @@
 <% } else { %> 
     <form action="" method="post" class="auth">
         <h1>Войти в <br>Панель управления</h1>
+        <a href="/">
+            <svg>
+                <use xlink:href="/main.svg#logo-svg"></use>
+            </svg>
+        </a> 
         <%- locals.say %>
-        <input type="login" name="login" id="login" required>
-        <input type="password" name="password" id="password" required>
+        <input type="login" name="login" id="login" required placeholder="Email...">
+        <input type="password" name="password" id="password" required placeholder="Password...">
         <button type="submit">Войти</button>
     </form>
 <% } %>

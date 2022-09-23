@@ -2,9 +2,20 @@ let pageCount = 0
 let pageMarginLeft = 0
 let sliderCount = 0
 let maxLenghtSlider = -1280 * document.querySelector('.scroll-img')?.querySelectorAll('img').length + 1280
+
 window.setInterval(function(){scrollSliderBtn(document.querySelector('.next'))}, 10000)
 
 window.addEventListener('resize', closeMenuPage);
+
+function leaveItem(div){
+    div.querySelector('.active')?.classList.remove('active')
+    div.querySelector('.first').classList.toggle('active')
+}
+
+function itemScroll(span){
+    span.parentNode.querySelector('.active')?.classList.remove('active')
+    span.classList.toggle('active')
+}
 
 function closeMenuPage() {
 	let pageWidth = window.innerWidth
@@ -21,6 +32,8 @@ function closeMenuPage() {
 function activeBtnCatalog(div) {
     div.classList.toggle('btnActiveCatalogHeader')
     document.querySelector('.catalog').classList.toggle('active')
+    document.querySelector('.cart-menu')?.classList.remove('active')
+    document.querySelector('.favorite-menu')?.classList.remove('active')
 }
 
 function showSearchInp() {
@@ -115,8 +128,15 @@ function bookCall(){
 
 function activeFavorite(){
     document.querySelector('.favorite-menu').classList.toggle('active')
+    document.querySelector('.cart-menu')?.classList.remove('active')
 }
 
 function cartMenu(){
     document.querySelector('.cart-menu').classList.toggle('active')
+    document.querySelector('.favorite-menu')?.classList.remove('active')
+}
+
+function activeHome(span){
+    span.parentNode.querySelector('.active')?.classList.remove('active')
+    span.classList.toggle('active')
 }
