@@ -1095,7 +1095,11 @@ header {
 }
 .main .home-page .top .show-btn span.active {
   color: black;
-  border-bottom: 2px solid #FF6600;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FF6600;
+          text-decoration-color: #FF6600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 .main .home-page .top .show-btn span:hover {
   color: black;
@@ -1546,6 +1550,9 @@ footer .line-footer div a .vk-icon-footer:hover {
     margin-left: 12px;
     margin-right: 12px;
   }
+  .main .home-page .body {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 838px) {
   .wrap {
@@ -1633,6 +1640,30 @@ footer .line-footer div a .vk-icon-footer:hover {
   }
   footer .line-footer {
     width: calc(100% - 24px);
+  }
+  .main .home-page .top .show-btn {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 150px;
+  }
+  .main .home-page .top .show-btn a {
+    margin-top: 6px;
+    margin-left: 0;
+  }
+  .main .home-page .top .show-btn span {
+    margin-right: 0;
+  }
+  .main .home-page .body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .main .home-page .more::before {
+    width: 20%;
+  }
+  .main .home-page .more::after {
+    width: 20%;
   }
 }
 @media screen and (max-width: 1300px) {
