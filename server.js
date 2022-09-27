@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-const port = 80
-
+const cookieParser = require('cookie-parser')
 const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database('./database/main.db')
 
 
+// settings
+const port = 80
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 
