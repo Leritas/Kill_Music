@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/admin.css">
-    <title>Admin panel | Ev1l Leritas</title>
+    <script src="/admin.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    <title>Admin panel | Kill music</title>
 </head>
 <body>
 
 <% if (locals.auth == true) {%>
-    authorized
+    <%- include('pages/admin-panel') %>
 
 
 

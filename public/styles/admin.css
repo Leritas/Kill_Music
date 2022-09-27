@@ -79,7 +79,9 @@ html {
 }
 
 body {
+  display: flex;
   width: 100%;
+  height: 100vh;
   background: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -149,4 +151,195 @@ a:focus-visible {
 .auth button:hover {
   box-shadow: 0px 0px 10px #FF6600;
   text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
+}
+
+.navigation-menu {
+  width: 300px;
+  height: 100vh;
+  background: #333;
+  box-shadow: 0px 0px 20px rgba(153, 153, 153, 0.8);
+}
+.navigation-menu a div {
+  width: 100%;
+  height: 64px;
+  color: white;
+  font-weight: inherit;
+  font-size: 20px;
+  line-height: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s;
+}
+.navigation-menu a div:hover {
+  color: #FF6600;
+}
+.navigation-menu .scrollbar {
+  width: 100%;
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+}
+.navigation-menu .scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+.navigation-menu .scrollbar div {
+  width: 100%;
+  height: 64px;
+  color: white;
+  font-weight: inherit;
+  font-size: 20px;
+  line-height: 64px;
+  border: 0;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.navigation-menu .scrollbar div:hover {
+  color: #FF6600;
+}
+.navigation-menu .exit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+.navigation-menu .exit svg {
+  fill: none;
+  stroke: white;
+  transition: stroke 0.2s;
+  width: 32px;
+  height: 32px;
+  margin: 16px 0 16px 0;
+}
+.navigation-menu .exit span {
+  color: white;
+  line-height: 64px;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+.navigation-menu .exit:hover svg {
+  stroke: #FF6600;
+}
+.navigation-menu .exit:hover span {
+  color: #FF6600;
+}
+
+.burger-btn {
+  display: none;
+}
+
+.blur {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(153, 153, 153, 0.8);
+  z-index: 2;
+}
+.blur.active {
+  display: block;
+}
+
+header {
+  width: calc(100% - 300px);
+  height: 128px;
+  background: white;
+  border-bottom: 1px solid whitesmoke;
+}
+header a svg {
+  width: 300px;
+  height: 64px;
+  margin: 0 12px 0 12px;
+}
+header form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+}
+header form input {
+  width: calc(80% - 64px);
+  height: 40px;
+  margin: 11px 0 11px 0;
+  border: 0;
+  border-bottom: 1px solid lightgrey;
+  padding-left: 12px;
+}
+header form input:focus-visible {
+  outline: 0;
+}
+header form button {
+  width: 40px;
+  height: 40px;
+  margin: 11px 0 11px 0;
+  padding: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+header form button svg {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  transition: fill 0.2s;
+}
+header form button:hover svg {
+  fill: #FF6600;
+}
+
+@media screen and (max-width: 600px) {
+  .auth {
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 0 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .navigation-menu {
+    position: absolute;
+    margin-left: -300px;
+    transition: margin-left 0.3s;
+    z-index: 3;
+  }
+  .navigation-menu.active {
+    margin-left: 0px;
+  }
+  .burger-btn {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 64px;
+    width: 64px;
+    cursor: pointer;
+  }
+  .burger-btn svg {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    transition: fill 0.2s;
+  }
+  .burger-btn:hover svg {
+    fill: #FF6600;
+  }
+  header {
+    width: 100%;
+  }
+  header form input {
+    width: calc(100% - 64px);
+    height: 40px;
+    margin: 11px 0 11px 0;
+    border: 0;
+    border-bottom: 1px solid lightgrey;
+    padding-left: 12px;
+  }
+  header form input:focus-visible {
+    outline: 0;
+  }
+}
+@media screen and (max-width: 460px) {
+  header a {
+    text-align: right;
+  }
 }/*# sourceMappingURL=admin.css.map */
