@@ -269,63 +269,134 @@ a {
     }
 }
 
-header {
+.body{
     width: calc(100% - 300px);
-    height: 128px;
-    background: white;
-    border-bottom: 1px solid whitesmoke;
+    height: 100vh;
 
-    a {
-        svg {
-            width: 300px;
-            height: 64px;
-            margin: 0 12px 0 12px;
-        }
-
-
-    }
-
-    form {
-        display: flex;
-        justify-content: center;
+    header {
         width: 100%;
-        height: 64px;
+        height: 128px;
+        background: white;
+        border-bottom: 1px solid whitesmoke;
 
-        input {
-            width: calc(80% - 64px);
-            height: 40px;
-            margin: 11px 0 11px 0;
-            border: 0;
-            border-bottom: 1px solid lightgrey;
-            padding-left: 12px;
-
-            &:focus-visible {
-                outline: 0;
+        a {
+            svg {
+                width: 300px;
+                height: 64px;
+                margin: 0 12px 0 12px;
             }
+
+
         }
 
-        button {
-            width: 40px;
-            height: 40px;
-            margin: 11px 0 11px 0;
-            padding: 0;
-            border: 0;
-            background: 0;
-            cursor: pointer;
+        form {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 64px;
 
-            svg {
-                width: 30px;
-                height: 30px;
-                margin: 5px;
-                transition: fill .2s;
+            input {
+                width: calc(80% - 64px);
+                height: 40px;
+                margin: 11px 0 11px 0;
+                border: 0;
+                border-bottom: 1px solid lightgrey;
+                padding-left: 12px;
+
+                &:focus-visible {
+                    outline: 0;
+                }
             }
 
-            &:hover {
+            button {
+                width: 40px;
+                height: 40px;
+                margin: 11px 0 11px 0;
+                padding: 0;
+                border: 0;
+                background: 0;
+                cursor: pointer;
+
                 svg {
-                    fill: $primary-orange;
+                    width: 30px;
+                    height: 30px;
+                    margin: 5px;
+                    transition: fill .2s;
+                }
+
+                &:hover {
+                    svg {
+                        fill: $primary-orange;
+                    }
                 }
             }
         }
+    }
+
+    .main{
+        display: none;
+        width: 100%;
+        height: calc(100vh - 129px);
+    }
+
+    .orders{
+        width: 100%;
+        height: calc(100vh - 129px);
+
+        .sort-menu{
+            display: grid;
+            justify-content: space-between;
+            align-items: center;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+            height: 50px;
+            line-height: 30px;
+            border-bottom: 1px solid whitesmoke;
+            background: white;
+
+            .sort-type{
+                padding: 0 12px 0 12px;
+                height: 30px;
+                border-left: 1px solid lightgrey;
+                font-size: 16px;
+                color: grey;
+                cursor: pointer;
+                overflow: hidden;
+                transition: color .2s;
+
+                &:hover {
+                    color: $primary-orange;
+                }
+            }
+        }
+
+        .scroll{
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+
+            .order{
+                width: 100%;
+                max-height: 64px;
+                background: white;
+
+                .small{
+                    display: grid;
+                    justify-content: space-between;
+                    grid-template-columns: repeat(5, 1fr);
+                    line-height: 64px;
+                    cursor: pointer;
+                    transition: .2s;
+
+                    &:hover{
+                        background: rgba(153, 153, 153, .4);
+                    }
+                }
+            }
+        }
+        
     }
 }
 
@@ -372,21 +443,16 @@ header {
         }
     }
 
-    header {
+    .body{
         width: 100%;
 
-        form {
+        header {
+            width: 100%;
 
-            input {
-                width: calc(100% - 64px);
-                height: 40px;
-                margin: 11px 0 11px 0;
-                border: 0;
-                border-bottom: 1px solid lightgrey;
-                padding-left: 12px;
+            form {
 
-                &:focus-visible {
-                    outline: 0;
+                input {
+                    width: calc(100% - 64px);
                 }
             }
         }
@@ -394,8 +460,8 @@ header {
 }
 
 @media screen and (max-width: 460px) {
-    header{
-        a{
+    .body{
+        header{
             text-align: right;
         }
     }

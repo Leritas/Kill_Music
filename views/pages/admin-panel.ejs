@@ -1,3 +1,11 @@
+<div class="blur" onclick="openNavigation()"></div>
+
+<div class="burger-btn" onclick="openNavigation()">
+    <svg>
+        <use xlink:href="/main.svg#menu-svg"></use>
+    </svg>
+</div>
+
 <div class="navigation-menu">
     <a href=""> 
         <div>Панель управления</div>
@@ -16,30 +24,54 @@
         <span>Выход</span>
     </div>
 </div>
-
-<div class="blur" onclick="openNavigation()"></div>
-
-<div class="burger-btn" onclick="openNavigation()">
-    <svg>
-        <use xlink:href="/main.svg#menu-svg"></use>
-    </svg>
-</div>
-
-<header>
-    <a href="/">
-        
+<div class="body">
+    <header>
+        <a href="/">
             <svg>
                 <use xlink:href="/main.svg#logo-svg"></use>
             </svg>
+        </a>
+        <form>
+            <input type="text" name="" id="" placeholder="Search...">
+            <button>
+                <svg>
+                    <use xlink:href="/main.svg#search-svg"></use>
+                </svg>
+            </button>
+        </form>
+    </header>
 
-       
-    </a>
-    <form>
-        <input type="text" name="" id="" placeholder="Search...">
-        <button>
-            <svg>
-                <use xlink:href="/main.svg#search-svg"></use>
-            </svg>
-        </button>
-    </form>
-</header>
+    <div class="main">
+        Главная
+    </div>
+    <div class="orders">
+        <div class="sort-menu">
+            <div class="sort-type">
+                Состояние
+            </div>
+            <div class="sort-type">
+                Номер
+            </div>
+            <div class="sort-type">
+                Количество
+            </div>
+            <div class="sort-type">
+                Дата
+            </div>
+            <div class="sort-type">
+                Сумма
+            </div>
+        </div>
+        <div class="scroll">
+            <div class="order">
+                <div class="small">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
