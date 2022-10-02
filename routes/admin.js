@@ -1,13 +1,17 @@
 const express = require('express')
 const router = express.Router()
+
+//константы для авторизации
 const cookieParser = require('cookie-parser')
+const passport = require('passport'),
+  localStrategy = require('passport-local').Strategy,
+  session = require('express-session'),
+  flash = require('connect-flash')
 
-const urlencodedParser = express.urlencoded({ extended: false });
-
+// константы для базы данных
 const sqlite3 = require('sqlite3').verbose()
 const md5 = require('md5')
 const db = new sqlite3.Database('./database/main.db')
-
 const query = (command, method = 'all') => {
   return new Promise((resolve, reject) => {
     db[method](command, (error, result) => {
@@ -21,25 +25,80 @@ const query = (command, method = 'all') => {
 };
 
 
-router.get('/', (req, res) => {
-  res.render('admin', {})
-})
 
-router.post('/', urlencodedParser, (req, res) => {
-  let authorized = false
-  db.serialize(async () => {
-    let user = await query(`SELECT * FROM users WHERE login = '${req.body.login}' `)
-    if (user[0]?.password == md5(req.body.password)) {
-      authorized = true; 
-      res.render('admin', { auth: authorized })
-    } else {
-      res.render('admin', { auth: authorized, say: 'Неверный пароль' })
+
+
+
+
+
+passport.serializeUser((user, done) => done(null, user))
+passport.deserializeUser((user, done) => done(null, user))
+
+router.use(express.json())
+router.use(express.urlencoded({ extended: true }))
+router.use(session({ secret: 'you secret key' }))
+router.use(flash())
+router.use(passport.initialize())
+router.use(passport.session())
+
+passport.use( 
+  new localStrategy(
+    {
+      usernameField: 'login',
+      passwordField: 'password',
+    },
+    (user, password, done) => {
+      let todone = ''
+      db.serialize(async () => {
+        let userdb = await query(`SELECT * FROM users WHERE login = '${user}' `)
+        if (user !== userdb[0]?.login)
+        return todone = done(null, false, {
+          message: 'User not found',
+        })
+         else if (md5(password) !== userdb[0]?.password)
+        return todone = done(null, false, {
+          message: 'Wrong password',
+        })
+        return todone = done(null, { id: 10, name: 'user', age: 21 })
+      })
+      return todone
     }
-  })
+  )
+)
 
-
-
-
+router.get('/', (req,res) => {
+  res.redirect('/admin/home')
 })
+
+router.get('/login', (req, res) => {
+  res.render('admin', {auth: false})
+})
+
+router.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/admin/home',
+    failureRedirect: '/admin/login',
+    failureFlash: true,
+  })
+)
+
+function checkAuth(req,res) {
+    if (!req.user) return res.redirect('/admin/login')
+}
+
+router.get('/home', (req, res) => {
+  checkAuth(req,res)
+  res.render('admin', {auth:true})
+})
+
+router.get('/logout', (req,res)  => {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/admin/home');
+  });
+})
+
+
 
 module.exports = router
