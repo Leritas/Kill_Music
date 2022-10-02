@@ -6,16 +6,14 @@
     </svg>
 </div>
 
-<div class="navigation-menu">
-    <a href=""> 
-        <div>Панель управления</div>
-    </a>
+<div class="navigation-menu"> 
+    <div onclick="switchScreen(this)">Панель управления</div>
     <div class="scrollbar">
-        <div>Заказы</div> 
-        <div>Категории</div>
-        <div>Товары</div>
-        <div>Аккаунты</div>
-        <div>Настройка страниц</div>
+        <div onclick="switchScreen(this)">Заказы</div> 
+        <div onclick="switchScreen(this)">Категории</div>
+        <div onclick="switchScreen(this)">Товары</div>
+        <div onclick="switchScreen(this)">Аккаунты</div>
+        <div onclick="switchScreen(this)">Настройка страниц</div>
     </div>
     <div class="exit">
         <svg>
@@ -41,7 +39,7 @@
         </form>
     </header>
 
-    <div class="main">
+    <div class="main active">
         Главная
     </div>
     <div class="orders">
@@ -64,12 +62,45 @@
         </div>
         <div class="scroll">
             <div class="order">
-                <div class="small">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
+                <div class="small" onclick="fullOrderMenu(this)">
+                    <svg>
+                        <use xlink:href="/main.svg#clock-svg"></use>
+                    </svg>
+                    <span>202042</span>
                     <span>5</span>
+                    <span>29.09.2022</span>
+                    <span>100000 ₽</span>
+                </div>
+                <div class="full">
+                    <div class="scroll">
+                        <a href="">
+                            <div class="item">
+                                <img src="/images/items/1.png" alt="">
+                                <div class="info-block">
+                                    <span>Руль для BMW M5 с подушкой</span><br>
+                                    <span class="desc">Мультируль для BMW M5 с блоками управления</span>
+                                </div>
+                                <div class="price">
+                                    <span>100000 ₽</span><br>
+                                    <span>x 1</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bottom">
+                        <span>Итог: 100000 ₽</span>
+                        <div class="btn">
+                            <svg>
+                                <use xlink:href="/main.svg#clock-svg"></use>
+                            </svg>
+                            <svg>
+                                <use xlink:href="/main.svg#order-svg"></use>
+                            </svg>
+                            <svg>
+                                <use xlink:href="/main.svg#check-svg"></use>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

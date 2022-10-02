@@ -74,7 +74,7 @@ select {
   }
 }
 html {
-  overflow-y: scroll;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -159,7 +159,7 @@ a:focus-visible {
   background: #333;
   box-shadow: 0px 0px 20px rgba(153, 153, 153, 0.8);
 }
-.navigation-menu a div {
+.navigation-menu div {
   width: 100%;
   height: 64px;
   color: white;
@@ -168,13 +168,14 @@ a:focus-visible {
   line-height: 64px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: color 0.2s;
+  cursor: pointer;
 }
-.navigation-menu a div:hover {
+.navigation-menu div:hover {
   color: #FF6600;
 }
 .navigation-menu .scrollbar {
   width: 100%;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 127px);
   overflow-y: scroll;
 }
 .navigation-menu .scrollbar::-webkit-scrollbar {
@@ -293,10 +294,17 @@ a:focus-visible {
 }
 .body .main {
   display: none;
+}
+.body .main.active {
+  display: block;
   width: 100%;
   height: calc(100vh - 129px);
 }
 .body .orders {
+  display: none;
+}
+.body .orders.active {
+  display: block;
   width: 100%;
   height: calc(100vh - 129px);
 }
@@ -325,6 +333,7 @@ a:focus-visible {
   color: #FF6600;
 }
 .body .orders .scroll {
+  height: calc(100vh - 178px);
   overflow-y: scroll;
 }
 .body .orders .scroll::-webkit-scrollbar {
@@ -332,7 +341,6 @@ a:focus-visible {
 }
 .body .orders .scroll .order {
   width: 100%;
-  max-height: 64px;
   background: white;
 }
 .body .orders .scroll .order .small {
@@ -340,11 +348,108 @@ a:focus-visible {
   justify-content: space-between;
   grid-template-columns: repeat(5, 1fr);
   line-height: 64px;
+  height: 64px;
   cursor: pointer;
   transition: 0.2s;
 }
+.body .orders .scroll .order .small svg {
+  margin: auto;
+  fill: grey;
+  width: 30px;
+  height: 30px;
+}
 .body .orders .scroll .order .small:hover {
   background: rgba(153, 153, 153, 0.4);
+}
+.body .orders .scroll .order .full {
+  width: calc(100% - 24px);
+  max-height: 0px;
+  margin: 12px;
+  border: 0px solid lightgrey;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.body .orders .scroll .order .full.active {
+  max-height: 366px;
+  border: 1px solid lightgrey;
+}
+.body .orders .scroll .order .full .scroll {
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: scroll;
+}
+.body .orders .scroll .order .full .scroll::-webkit-scrollbar {
+  width: 0;
+}
+.body .orders .scroll .order .full .scroll a .item {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+.body .orders .scroll .order .full .scroll a .item:hover {
+  background: rgba(153, 153, 153, 0.2);
+}
+.body .orders .scroll .order .full .scroll a .item img {
+  width: 78px;
+  height: 78px;
+  border-radius: 5px;
+}
+.body .orders .scroll .order .full .scroll a .item .info-block {
+  width: calc(100% - 178px);
+  height: 78px;
+  text-align: left;
+  padding-left: 12px;
+  overflow: hidden;
+}
+.body .orders .scroll .order .full .scroll a .item .info-block span {
+  font-size: 20px;
+}
+.body .orders .scroll .order .full .scroll a .item .info-block span.desc {
+  font-size: 18px;
+  color: grey;
+}
+.body .orders .scroll .order .full .scroll a .item .price {
+  width: 100px;
+  height: 78px;
+  text-align: center;
+}
+.body .orders .scroll .order .full .scroll a .item .price span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.body .orders .scroll .order .full .bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  line-height: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid lightgrey;
+}
+.body .orders .scroll .order .full .bottom span {
+  font-size: 20px;
+  color: grey;
+  margin: 12px;
+}
+.body .orders .scroll .order .full .bottom .btn {
+  display: flex;
+}
+.body .orders .scroll .order .full .bottom .btn svg {
+  width: 34px;
+  height: 34px;
+  margin: 15px;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.body .orders .scroll .order .full .bottom .btn svg:hover {
+  fill: #FF6600;
 }
 
 @media screen and (max-width: 600px) {
