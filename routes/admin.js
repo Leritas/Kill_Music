@@ -48,11 +48,9 @@ passport.use(
       passwordField: 'password',
     },
     (user, password, done) => {
-      console.log(user,password)
       let todone = ''
       db.serialize(async () => {
         let userdb = await query(`SELECT * FROM users WHERE login = '${user}' `)
-        console.log(userdb)
         if (user !== userdb[0]?.login)
         return todone = done(null, false, {
           message: 'User not found',
