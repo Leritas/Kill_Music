@@ -243,6 +243,7 @@ a:focus-visible {
 }
 
 .body {
+  position: relative;
   width: calc(100% - 300px);
   height: 100vh;
 }
@@ -451,6 +452,223 @@ a:focus-visible {
 .body .orders .scroll .order .full .bottom .btn svg:hover {
   fill: #FF6600;
 }
+.body .users {
+  display: none;
+}
+.body .users.active {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 129px);
+}
+.body .users h1 {
+  width: 100%;
+  line-height: 64px;
+  font-weight: inherit;
+  font-size: 24px;
+  color: grey;
+}
+.body .users .all-admin {
+  width: 100%;
+  height: calc(100vh - 258px);
+  overflow-y: scroll;
+}
+.body .users .all-admin::-webkit-scrollbar {
+  width: 0px;
+}
+.body .users .all-admin .sort {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 64px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+.body .users .all-admin .sort span {
+  color: grey;
+  transition: color 0.2s;
+  cursor: pointer;
+  border-left: 1px solid lightgrey;
+}
+.body .users .all-admin .sort span:hover {
+  color: #FF6600;
+}
+.body .users .all-admin .admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 64px;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  transition: 0.2s;
+}
+.body .users .all-admin .admin:hover {
+  background: rgba(153, 153, 153, 0.2);
+}
+.body .users .all-admin .admin span {
+  overflow: hidden;
+}
+.body .users .all-admin .admin svg {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.body .users .all-admin .admin svg:hover {
+  fill: #FF6600;
+}
+.body .users .btn-add-admin {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 24px);
+  height: 64px;
+  margin: 0px 12px 0px 12px;
+  border-top: 1px solid lightgrey;
+  cursor: pointer;
+  line-height: 64px;
+  font-size: 18px;
+  color: grey;
+  transition: color 0.2s;
+}
+.body .users .btn-add-admin:hover {
+  color: #FF6600;
+}
+
+.blur-add {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(153, 153, 153, 0.8);
+  z-index: 2;
+  transition: opacity 0.2s;
+}
+.blur-add.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.add-admin-menu {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+  padding: 0 12px 0 12px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(153, 153, 153, 0.8);
+  z-index: 3;
+}
+.add-admin-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.add-admin-menu h3 {
+  line-height: 64px;
+  font-weight: inherit;
+  font-size: 20px;
+  color: grey;
+}
+.add-admin-menu .inp-block {
+  width: 400px;
+  height: 392px;
+  margin: auto;
+}
+.add-admin-menu .inp-block div {
+  display: flex;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  transition: 0.2s;
+  text-align: left;
+}
+.add-admin-menu .inp-block div:hover {
+  border-color: grey;
+}
+.add-admin-menu .inp-block div input {
+  width: calc(100% - 50px);
+  height: 50px;
+  border: 0;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.add-admin-menu .inp-block div input:focus-visible {
+  outline: 0;
+}
+.add-admin-menu .inp-block div span svg {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  fill: grey;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.add-admin-menu .inp-block div span svg:hover {
+  fill: #FF6600;
+}
+.add-admin-menu .inp-block select {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  transition: 0.2s;
+  text-align: left;
+}
+.add-admin-menu .inp-block select:hover {
+  border-color: grey;
+}
+.add-admin-menu .inp-block select:focus-visible {
+  outline: 0;
+}
+.add-admin-menu .btn {
+  width: 100%;
+  height: 64px;
+  border: 0px;
+  padding: 0;
+  margin: 0;
+  line-height: 64px;
+  border-top: 1px solid lightgrey;
+  background: white;
+  font-size: 18px;
+  color: #FF6600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.add-admin-menu .btn :focus-visible {
+  outline: 0;
+}
+.add-admin-menu .btn:hover {
+  color: grey;
+}
+.add-admin-menu .div-btn {
+  width: 100%;
+  height: 64px;
+  border: 0px;
+  padding: 0;
+  margin: 0;
+  line-height: 64px;
+  border-top: 1px solid lightgrey;
+  background: white;
+  font-size: 18px;
+  color: grey;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.add-admin-menu .div-btn :focus-visible {
+  outline: 0;
+}
+.add-admin-menu .div-btn:hover {
+  color: #FF6600;
+}
 
 @media screen and (max-width: 600px) {
   .auth {
@@ -477,6 +695,7 @@ a:focus-visible {
     height: 64px;
     width: 64px;
     cursor: pointer;
+    z-index: 1;
   }
   .burger-btn svg {
     width: 50px;

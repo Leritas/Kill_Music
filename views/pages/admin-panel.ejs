@@ -1,5 +1,3 @@
-<div class="blur" onclick="openNavigation()"></div>
-
 <div class="burger-btn" onclick="openNavigation()">
     <svg>
         <use xlink:href="/main.svg#menu-svg"></use>
@@ -15,12 +13,14 @@
         <div onclick="switchScreen(this)">Аккаунты</div>
         <div onclick="switchScreen(this)">Настройка страниц</div>
     </div>
-    <div class="exit">
-        <svg>
-            <use xlink:href="/main.svg#exit-svg"></use>
-        </svg>
-        <span>Выход</span>
-    </div>
+    <a href="/admin/logout">
+        <div class="exit">
+            <svg>
+                <use xlink:href="/main.svg#exit-svg"></use>
+            </svg>
+            <span>Выход</span>
+        </div>
+    </a>
 </div>
 <div class="body">
     <header>
@@ -103,6 +103,27 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="users">
+        <h1>Настройка аккаунтов</h1>
+        <div class="all-admin">
+            <div class="sort">
+                <span>Логин</span>
+                <span>Почта</span>
+                <span>Должность</span>
+            </div>
+            <div class="admin">
+                <span>EV1L</span>
+                <span>vislik46rus@gmail.com</span>
+                <span>Администратор</span>
+                <svg>
+                    <use xlink:href="/main.svg#pencil-svg"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="btn-add-admin" onclick="menuOpen()">
+            <span>Добавить администратора</span>
         </div>
     </div>
 </div>
