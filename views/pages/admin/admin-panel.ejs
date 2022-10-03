@@ -1,0 +1,672 @@
+<div class="burger-btn" onclick="openNavigation()">
+    <svg>
+        <use xlink:href="/main.svg#menu-svg"></use>
+    </svg>
+</div>
+
+<div class="navigation-menu"> 
+    <div style="cursor: context-menu;">Панель управления</div>
+    <div class="scrollbar">
+        <div onclick="switchScreen(this)">Заказы</div> 
+        <div onclick="switchScreen(this)">Категории</div>
+        <div onclick="switchScreen(this)">Товары</div>
+        <div onclick="switchScreen(this)">Аккаунты</div>
+        <div onclick="switchScreen(this)">Настройка страниц</div>
+    </div>
+    <a href="/admin/logout">
+        <div class="exit">
+            <svg>
+                <use xlink:href="/main.svg#exit-svg"></use>
+            </svg>
+            <span>Выход</span>
+        </div>
+    </a>
+</div>
+<div class="body">
+    <header>
+        <a href="/">
+            <svg>
+                <use xlink:href="/main.svg#logo-svg"></use>
+            </svg>
+        </a>
+        <form>
+            <input type="text" name="" id="" placeholder="Search...">
+            <button>
+                <svg>
+                    <use xlink:href="/main.svg#search-svg"></use>
+                </svg>
+            </button>
+        </form>
+    </header>
+
+    <div class="orders ">
+        <div class="sort-menu">
+            <div class="sort-type">
+                Состояние
+            </div>
+            <div class="sort-type">
+                Номер
+            </div>
+            <div class="sort-type">
+                Количество
+            </div>
+            <div class="sort-type">
+                Дата
+            </div>
+            <div class="sort-type">
+                Сумма
+            </div>
+        </div>
+        <div class="scroll">
+            <div class="order">
+                <div class="small" onclick="fullOrderMenu(this)">
+                    <svg>
+                        <use xlink:href="/main.svg#clock-svg"></use>
+                    </svg>
+                    <span>202042</span>
+                    <span>5</span>
+                    <span>29.09.2022</span>
+                    <span>100000 ₽</span>
+                </div>
+                <div class="full">
+                    <div class="scroll">
+                        <a href="">
+                            <div class="item">
+                                <img src="/images/items/1.png" alt="">
+                                <div class="info-block">
+                                    <span>Руль для BMW M5 с подушкой</span><br>
+                                    <span class="desc">Мультируль для BMW M5 с блоками управления</span>
+                                </div>
+                                <div class="price">
+                                    <span>100000 ₽</span><br>
+                                    <span>x 1</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bottom">
+                        <span>Итог: 100000 ₽</span>
+                        <div class="btn">
+                            <svg>
+                                <use xlink:href="/main.svg#clock-svg"></use>
+                            </svg>
+                            <svg>
+                                <use xlink:href="/main.svg#order-svg"></use>
+                            </svg>
+                            <svg>
+                                <use xlink:href="/main.svg#check-svg"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="category first">
+            <div class="redact">
+                <input type="text" value="Каталог 1" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Каталог 2" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Каталог 3" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Каталог 4" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Каталог 5" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="add">
+                <input type="text" placeholder="Название категории" required>
+                <span  onclick="addCategory(this)">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <span  onclick="addCategory(this)">
+                    <svg class="close" >
+                        <use xlink:href="/main.svg#close-svg"></use>
+                    </svg>
+                </span>
+            </div>
+            <div>
+                <div class="show-add-menu" onclick="addCategory(this)">
+                    <span>Добавить категорию...+</span>
+                </div>
+            </div>
+        </div>
+        <div class="category ">
+            <h1>Категория 3</h1>
+            <div class="redact">
+                <input type="text" value="Подкаталог 1" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 2" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 3" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 4" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 5" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            
+            <div class="add">
+                <input type="text" placeholder="Название категории" required>
+                <span  onclick="addCategory(this)">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <span  onclick="addCategory(this)">
+                    <svg class="close" >
+                        <use xlink:href="/main.svg#close-svg"></use>
+                    </svg>
+                </span>
+            </div>
+            <div>
+                <div class="show-add-menu" onclick="addCategory(this)">
+                    <span>Добавить категорию...+</span>
+                </div>
+            </div>
+        </div>
+        <div class="category ">
+            <h1>Подкатегория 5</h1>
+            <div class="redact">
+                <input type="text" value="Подкаталог 1" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 2" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 3" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 4" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 5" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            <div class="redact">
+                <input type="text" value="Подкаталог 6" disabled>
+                <span onclick="unlockCatalog(this)" class="pencil">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+                <span onclick="lockCatalog(this)" class="done">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <svg>
+                    <use xlink:href="/main.svg#delete-svg"></use>
+                </svg>
+            </div>
+            
+            <div class="add">
+                <input type="text" placeholder="Название категории" required>
+                <span  onclick="addCategory(this)">
+                    <svg>
+                        <use xlink:href="/main.svg#check-svg"></use>
+                    </svg>
+                </span>
+                <span  onclick="addCategory(this)">
+                    <svg class="close" >
+                        <use xlink:href="/main.svg#close-svg"></use>
+                    </svg>
+                </span>
+            </div>
+            <div>
+                <div class="show-add-menu" onclick="addCategory(this)">
+                    <span>Добавить категорию...+</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="items active">
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="btn-add-item">
+            <span>Добавить товар</span>
+        </div>
+    </div>
+    <div class="users">
+        <h1>Настройка аккаунтов</h1>
+        <div class="all-admin">
+            <div class="sort">
+                <span>Логин</span>
+                <span>Почта</span>
+                <span>Должность</span>
+            </div>
+            <div class="admin">
+                <span>EV1L</span>
+                <span>vislik46rus@gmail.com</span>
+                <span>Администратор</span>
+                <span onclick="menuOpen(this)" id="edit">
+                    <svg>
+                        <use xlink:href="/main.svg#pencil-svg"></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="btn-add-admin" onclick="menuOpen(this)" id="add">
+            <span>Добавить администратора</span>
+        </div>
+    </div>
+</div>

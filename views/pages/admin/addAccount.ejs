@@ -1,38 +1,44 @@
 <div class="blur-add" onclick="closeMenu()"></div>
 
 <form class="add-admin-menu">
-        <h3>Добавить аккаунт</h3>
-        <div class="inp-block">
-            <div>
-                <input type="text" name="login" required placeholder="Логин...">
-            </div>
-            <div>
-                <input type="mail" name="email"  required placeholder="Email...">
-            </div>
-            <div>
-                <input type="password" name="password" required placeholder="Пароль...">
-                <span onclick="showInput(this)">
-                    <svg>
-                        <use xlink:href="/main.svg#show-svg"></use>
-                    </svg>
-                </span>
-            </div>
-            <div>
-                <input type="password" name="password-repeat" required placeholder="Пароль ещё раз...">
-                <span onclick="showInput(this)">
-                    <svg>
-                        <use xlink:href="/main.svg#show-svg"></use>
-                    </svg>
-                </span>
-            </div>
-            
-            <select name="select">
-                <option disabled>Выберите сотрудника</option>
-                <option value="Администратор">Администратор</option>
-                <option value="Редактор">Редактор</option>
-                <option value="Менеджер" selected>Менеджер</option>
-            </select>
+    <div class="close-row">
+        <span onclick="closeMenu()">
+            <svg>
+                <use xlink:href="/main.svg#close-svg"></use>
+            </svg>
+        </span>
+    </div>
+    <h3>Добавить аккаунт</h3>
+    <div class="inp-block">
+        <div>
+            <input type="text" name="login" required placeholder="Логин...">
         </div>
-        <button class="btn">Сохранить</button>
-        <div class="div-btn" onclick="closeMenu()">Закрыть</div>
+        <div>
+            <input type="mail" name="email"  required placeholder="Email...">
+        </div>
+        <div>
+            <input type="password" name="password" required placeholder="Пароль...">
+            <span onclick="showInput(this)">
+                <svg>
+                    <use xlink:href="/main.svg#show-svg"></use>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <input type="password" name="password-repeat" required placeholder="Пароль ещё раз...">
+            <span onclick="showInput(this)">
+                <svg>
+                    <use xlink:href="/main.svg#show-svg"></use>
+                </svg>
+            </span>
+        </div>
+        
+        <select name="select">
+            <option disabled>Выберите сотрудника</option>
+            <option value="Администратор">Администратор</option>
+            <option value="Редактор">Редактор</option>
+            <option value="Менеджер" selected>Менеджер</option>
+        </select>
+    </div>
+    <button class="btn">Сохранить</button>
 </form>

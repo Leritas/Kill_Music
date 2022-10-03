@@ -1,0 +1,58 @@
+<div class="blur-add" onclick="closeMenu()"></div>
+
+<div class="edit-account">
+    <div class="close-row">
+        <span onclick="closeMenu()">
+            <svg>
+                <use xlink:href="/main.svg#close-svg"></use>
+            </svg>
+        </span>
+    </div>
+    <h3>Редактировать</h3>
+    <form action="">
+        <div>
+            <input type="text" disabled required value="EV1L">
+            <span onclick="unlockInput(this)">
+                <svg>
+                    <use xlink:href="/main.svg#lock-svg"></use>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <input type="mail" disabled required value="vislik46rus@gmail.com">
+            <span onclick="unlockInput(this)">
+                <svg>
+                    <use xlink:href="/main.svg#lock-svg"></use>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <input type="password" disabled placeholder="Введите новый пароль...">
+            <span onclick="unlockInput(this)">  
+                <svg>
+                    <use xlink:href="/main.svg#lock-svg"></use>
+                </svg>
+            </span>
+            <span onclick="showInput(this)">
+                <svg class="show">
+                    <use xlink:href="/main.svg#show-svg"></use>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <input type="password" disabled placeholder="Повторите пароль...">
+            <span onclick="showInput(this)">
+                <svg class="show">
+                    <use xlink:href="/main.svg#show-svg"></use>
+                </svg>
+            </span>
+        </div>
+        <select name="select">
+            <option disabled>Выберите сотрудника</option>
+            <option value="Администратор">Администратор</option>
+            <option value="Редактор">Редактор</option>
+            <option value="Менеджер" selected>Менеджер</option>
+        </select>
+    </form>
+    <button>Сохранить</button>
+</div>

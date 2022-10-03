@@ -293,14 +293,6 @@ a:focus-visible {
 .body header form button:hover svg {
   fill: #FF6600;
 }
-.body .main {
-  display: none;
-}
-.body .main.active {
-  display: block;
-  width: 100%;
-  height: calc(100vh - 129px);
-}
 .body .orders {
   display: none;
 }
@@ -452,6 +444,243 @@ a:focus-visible {
 .body .orders .scroll .order .full .bottom .btn svg:hover {
   fill: #FF6600;
 }
+.body .categories {
+  display: none;
+  height: calc(100vh - 128px);
+  width: 100%;
+  padding: 12px;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.body .categories.active {
+  display: flex;
+}
+.body .categories::-webkit-scrollbar {
+  height: 0px;
+}
+.body .categories .category {
+  min-width: 300px;
+  max-height: calc(100vh - 128px);
+  border-left: 1px solid lightgrey;
+  padding-left: 12px;
+  overflow-y: scroll;
+}
+.body .categories .category::-webkit-scrollbar {
+  width: 0;
+}
+.body .categories .category.first {
+  border: 0px;
+  padding: 0;
+}
+.body .categories .category h1 {
+  text-align: left;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+.body .categories .category .redact {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+.body .categories .category .redact input {
+  width: calc(100% - 100px);
+  height: 50px;
+  font-size: 18px;
+  border: 0;
+  outline: 0;
+  background: 0;
+}
+.body .categories .category .redact svg {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  fill: rgba(0, 0, 0, 0);
+  transition: fill 0.2s;
+}
+.body .categories .category .redact .pencil.active {
+  display: none;
+}
+.body .categories .category .redact .done {
+  display: none;
+}
+.body .categories .category .redact .done.active {
+  display: block;
+}
+.body .categories .category .redact:hover svg {
+  fill: grey;
+  transition: fill 0.2s;
+}
+.body .categories .category .redact:hover svg:hover {
+  fill: #FF6600;
+}
+.body .categories .category .add {
+  display: none;
+  width: 100%;
+  height: 50px;
+}
+.body .categories .category .add.active {
+  display: flex;
+}
+.body .categories .category .add input {
+  width: calc(100% - 100px);
+  height: 30px;
+  margin: 10px 0 10px 0;
+  border: 0px;
+  border-bottom: 1px solid lightgrey;
+  outline: 0;
+  background: 0;
+}
+.body .categories .category .add svg {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  fill: grey;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body .categories .category .add svg:hover {
+  fill: #FF6600;
+}
+.body .categories .category .add svg.close {
+  stroke: grey;
+}
+.body .categories .category .add svg.close:hover {
+  stroke: #FF6600;
+}
+.body .categories .category .show-add-menu {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+.body .categories .category .show-add-menu.active {
+  display: none;
+}
+.body .categories .category .show-add-menu span {
+  color: #FF6600;
+  font-size: 18px;
+  line-height: 50px;
+  cursor: pointer;
+}
+.body .items {
+  display: none;
+  width: 100%;
+  height: calc(100vh - 192px);
+  padding: 12px;
+  overflow-y: scroll;
+}
+.body .items::-webkit-scrollbar {
+  width: 0;
+}
+.body .items.active {
+  display: block;
+}
+.body .items .item {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  padding: 25px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.body .items .item:hover {
+  box-shadow: 0px 0px 20px rgba(153, 153, 153, 0.8);
+}
+.body .items .item .img-scroll {
+  position: relative;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.body .items .item .img-scroll .hover-span-img {
+  height: 152px;
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+  margin-left: 5px;
+  border-bottom: 1px solid grey;
+}
+.body .items .item .img-scroll .hover-span-img img {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
+.body .items .item .img-scroll .hover-span-img.active {
+  border-color: #FF6600;
+}
+.body .items .item .img-scroll .hover-span-img.active img {
+  display: block;
+}
+.body .items .item .about-item {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% - 250px);
+  text-align: left;
+  display: block;
+  overflow: hidden;
+}
+.body .items .item .about-item a {
+  font-size: 18px;
+  transition: color 0.2s;
+}
+.body .items .item .about-item a:hover {
+  color: #FF6600;
+}
+.body .items .item .about-item span {
+  font-size: 14px;
+  color: grey;
+}
+.body .items .item .btn-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100px;
+  height: 150px;
+}
+.body .items .item .btn-menu span {
+  font-size: 18px;
+}
+.body .items .item .btn-menu .btn-setting {
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+.body .items .item .btn-menu .btn-setting svg {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+  fill: grey;
+  transition: fill 0.2s;
+}
+.body .items .item .btn-menu .btn-setting svg:hover {
+  fill: #FF6600;
+}
+.body .items .btn-add-item {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: 64px;
+  line-height: 64px;
+  color: #FF6600;
+  font-size: 20px;
+  border-top: 1px solid lightgrey;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.body .items .btn-add-item:hover {
+  color: grey;
+}
 .body .users {
   display: none;
 }
@@ -508,7 +737,7 @@ a:focus-visible {
 .body .users .all-admin .admin svg {
   width: 30px;
   height: 30px;
-  margin: auto;
+  margin: 17px auto 17px auto;
   cursor: pointer;
   transition: fill 0.2s;
 }
@@ -649,25 +878,133 @@ a:focus-visible {
 .add-admin-menu .btn:hover {
   color: grey;
 }
-.add-admin-menu .div-btn {
-  width: 100%;
-  height: 64px;
-  border: 0px;
-  padding: 0;
-  margin: 0;
-  line-height: 64px;
-  border-top: 1px solid lightgrey;
+
+.edit-account {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 500px;
   background: white;
-  font-size: 18px;
-  color: grey;
-  cursor: pointer;
-  transition: color 0.2s;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(153, 153, 153, 0.8);
+  z-index: 3;
 }
-.add-admin-menu .div-btn :focus-visible {
+.edit-account.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.edit-account h3 {
+  font-weight: inherit;
+  font-size: 24px;
+  color: grey;
+}
+.edit-account form {
+  width: 400px;
+  height: 330px;
+  margin: auto;
+}
+.edit-account form div {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin: 12px 0 12px 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.edit-account form div:hover {
+  border-color: grey;
+}
+.edit-account form div input {
+  width: calc(100% - 50px);
+  height: 50px;
+  border: 0px;
+  padding-left: 10px;
+  background: 0;
+}
+.edit-account form div input:focus-visible {
   outline: 0;
 }
-.add-admin-menu .div-btn:hover {
+.edit-account form div svg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 1;
+  pointer-events: all;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  fill: grey;
+  transition: 0.2s;
+}
+.edit-account form div svg:hover {
+  fill: #FF6600;
+}
+.edit-account form div svg.active {
+  opacity: 0;
+  pointer-events: none;
+}
+.edit-account form div .show {
+  opacity: 0;
+  pointer-events: none;
+}
+.edit-account form div .show.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.edit-account form select {
+  width: 100%;
+  height: 50px;
+  margin: 12px 0 12px 0;
+  padding-left: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.edit-account form select:hover {
+  border-color: grey;
+}
+.edit-account form select:focus-visible {
+  outline: 0;
+}
+.edit-account button {
+  width: calc(100% - 24px);
+  height: 64px;
+  line-height: 64px;
+  background: white;
+  border: 0;
+  border-top: 1px solid lightgrey;
+  cursor: pointer;
   color: #FF6600;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+.edit-account button:focus-visible {
+  outline: 0;
+}
+.edit-account button:hover {
+  color: grey;
+}
+
+.close-row {
+  text-align: right;
+  width: 100%;
+  height: 64px;
+  padding: 12px;
+}
+.close-row svg {
+  width: 40px;
+  height: 40px;
+  stroke: grey;
+  cursor: pointer;
+  transition: stroke 0.2s;
+}
+.close-row svg:hover {
+  stroke: #FF6600;
 }
 
 @media screen and (max-width: 600px) {
