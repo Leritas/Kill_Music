@@ -336,7 +336,7 @@ a {
     .orders{
         display: none;
 
-        &.active{
+        &.selected{
             display: block;
             width: 100%;
             height: calc(100vh - 129px);
@@ -524,7 +524,7 @@ a {
         overflow-y: hidden;
         overflow-x: scroll;
 
-        &.active{
+        &.selected{
             display: flex;
         }
 
@@ -676,7 +676,7 @@ a {
             width: 0;
         }
 
-        &.active{
+        &.selected{
             display: block;
         }
 
@@ -808,7 +808,7 @@ a {
     .users{
         display: none;
         
-        &.active{
+        &.selected{
             display: block;
             width: 100%;
             height: calc(100vh - 129px);
@@ -1181,6 +1181,24 @@ a {
         &:hover{
             stroke: $primary-orange;
         }
+    }
+}
+
+.add-new-item{
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    transition: .2s;
+
+
+    &.active{
+        opacity: 1;
+        pointer-events: all;
     }
 }
 

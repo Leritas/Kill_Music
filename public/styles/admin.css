@@ -296,7 +296,7 @@ a:focus-visible {
 .body .orders {
   display: none;
 }
-.body .orders.active {
+.body .orders.selected {
   display: block;
   width: 100%;
   height: calc(100vh - 129px);
@@ -453,7 +453,7 @@ a:focus-visible {
   overflow-y: hidden;
   overflow-x: scroll;
 }
-.body .categories.active {
+.body .categories.selected {
   display: flex;
 }
 .body .categories::-webkit-scrollbar {
@@ -573,7 +573,7 @@ a:focus-visible {
 .body .items::-webkit-scrollbar {
   width: 0;
 }
-.body .items.active {
+.body .items.selected {
   display: block;
 }
 .body .items .item {
@@ -684,7 +684,7 @@ a:focus-visible {
 .body .users {
   display: none;
 }
-.body .users.active {
+.body .users.selected {
   display: block;
   width: 100%;
   height: calc(100vh - 129px);
@@ -1005,6 +1005,22 @@ a:focus-visible {
 }
 .close-row svg:hover {
   stroke: #FF6600;
+}
+
+.add-new-item {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  transition: 0.2s;
+}
+.add-new-item.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 @media screen and (max-width: 600px) {
