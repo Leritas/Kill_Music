@@ -125,20 +125,46 @@ a {
         }
     }
 
-    input {
+    div{
+        display: flex;
         width: 350px;
         height: 50px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
-        padding-left: 10px;
-        background: whitesmoke;
         border: 1px solid lightgrey;
         border-radius: 5px;
+        background: whitesmoke;
+        text-align: left;
 
-        &:focus-visible {
-            outline: 0;
-            border-color: grey;
+        input {
+            border: 0px;
+            background: 0;
+            width: calc(100% - 50px); 
+            height: 50px;   
+            padding-left: 10px;
+            
+            &:focus-visible {
+                outline: 0;
+            }
+        }
+
+        span{
+            cursor: pointer;
+
+            svg{
+                margin: 10px;
+                width: 30px;
+                height: 30px;
+                fill: grey;
+                transition: fill .2s;
+            }
+
+            &:hover{
+                svg{
+                    fill: $primary-orange;
+                }
+            }
         }
     }
 
@@ -1195,10 +1221,219 @@ a {
     background: white;
     transition: .2s;
 
-
     &.active{
         opacity: 1;
         pointer-events: all;
+    }
+
+    .flex-menu{
+        display: flex;
+        width: 80%;
+        margin: auto;
+
+        .preview{
+            width: 387px;
+            height: 300px;
+            display: flex;
+            overflow: hidden;
+            
+            .full-preview{
+                position: relative;
+                width: 300px;
+                height: 300px;
+                overflow: hidden;
+                border: 1px solid grey;
+                border-radius: 5px;
+                transition: .2s;
+                
+                input{
+                    display: none;
+                }
+                
+                .btn-delete{
+                    opacity: 0;
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    cursor: pointer;
+                    transition: .4s;
+
+                    svg{
+                        width: 30px;
+                        height: 30px;
+                        fill: $primary-orange;;
+                        transition: fill .2s;
+
+                        &:hover{
+                            fill: grey;
+                        }
+                    }
+                }
+
+                .line-add {
+                    opacity: 0;
+                    position: absolute;
+                    top: calc(50% - 25px);
+                    width: 100%;
+                    margin: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    transition: opacity .4s;
+            
+                    &::before {
+                        content: "";
+                        margin-top: 25px;
+                        width: calc(50% - 70px);
+                        height: 1px;
+                        background: $primary-orange;;
+                        transition: .2s;
+                    }
+            
+                    &::after {
+                        content: "";
+                        margin-top: 25px;
+                        width: calc(50% - 70px);
+                        height: 1px;
+                        background: $primary-orange;
+                        transition: .2s;
+                    }
+            
+                    div {
+                        display: inline-block;
+                        line-height: 50px;
+                        width: 140px;
+                        font-size: 18px;
+                        color: $primary-orange;;
+                        cursor: pointer;
+                        transition: color .2s;
+                    }
+
+                    &:hover{
+                        &::before {
+                            background: grey;
+                        }
+                
+                        &::after {
+                            background: grey;
+                        }
+                
+                        div {
+                            color: grey;
+                        }
+    
+                    }
+                }
+
+                img{
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 5px;
+                    transition: .3s;
+                }
+
+                &:hover{
+
+                    img{
+                        filter: blur(4px);
+                    }
+                                    
+                    .btn-delete{
+                        opacity: 1;
+                    }
+
+                    .line-add {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .small-preview{
+                display: flex;
+                flex-direction: column;
+                width: 83px;
+                height: 300px;
+                padding-left: 12px;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar{
+                        width: 0;
+                }
+                
+                div{
+                    min-width: 71px;
+                    min-height: 71px;
+                    margin: 2px 0 2px 0;         
+                    border-radius: 5px;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img{
+                        width: 71px;
+                        height: 71px;
+                        
+                    }
+
+                    &.active{
+                        border: 1px solid $primary-orange;
+                    }
+                }
+            }
+        }
+
+        .descr-item{
+            padding-left: 12px;
+            text-align: left;
+
+            h3{
+                color: grey;
+                font-size: 22px;
+            }
+
+            input{
+                width: 500px;
+                height: 50px;
+                background: 0;
+                border: 1px solid lightgrey;
+                border-radius: 5px;
+                outline: 0;
+                margin: 12px 0 24px 0;
+                padding-left: 5px;
+            }
+
+            textarea{
+                width: 500px;
+                height: 148px;
+                resize: none;
+                outline: 0;
+                background: 0;
+                border: 1px solid lightgrey;
+                border-radius: 5px;
+                padding: 5px;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    button{
+        position: absolute;
+        bottom: 0;
+        left: 12px;
+        width: calc(100% - 24px);
+        height: 64px;
+        background: 0;
+        border: 0;
+        border-top: 1px solid grey;
+        color: $primary-orange;
+        font-size: 18px;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover{
+            color: grey;
+            width: 100%;
+            left: 0;
+            background: rgba(153, 153, 153, .2);
+        }
     }
 }
 

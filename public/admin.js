@@ -14,8 +14,8 @@ function openNavigation() {
 function closeNavigation() {
     let pageWidth = window.innerWidth
     if (pageWidth > 640){
-        document.querySelector('.navigation-menu').classList.remove('active')
-        document.querySelector('.blur').classList.remove('active')
+        document.querySelector('.navigation-menu')?.classList.remove('active')
+        document.querySelector('.blur')?.classList.remove('active')
     }  
 }
 
@@ -114,4 +114,20 @@ function itemScroll(span){
 
 function addNewItem(){
     document.querySelector('.add-new-item')?.classList.add('active')
+}
+
+function selectedImgPreview(div){
+    let srcImg = div.querySelector('img').src
+    div.parentNode.querySelector('.active')?.classList.remove('active')
+    div.classList.add('active')
+    showSelectImgPreview(srcImg)
+}
+
+function showSelectImgPreview(srcImg){
+    document.querySelector('.add-new-item').querySelector('.full-preview').querySelector('img').src = srcImg
+}
+
+function addImgItem(btn){
+    console.log(btn.parentNode.querySelector('input'))
+    btn.parentNode.querySelector('input').click()
 }
