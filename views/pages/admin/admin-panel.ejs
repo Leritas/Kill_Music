@@ -39,7 +39,7 @@
         </form>
     </header>
 
-    <div class="orders ">
+    <div class="orders selected">
         <div class="sort-menu">
             <div class="sort-type">
                 Состояние
@@ -204,7 +204,7 @@
             </div>
         </div>
         <div class="category ">
-            <h1>Категория 3</h1>
+            <h1 class="h1">Категория 3</h1>
             <div class="redact">
                 <input type="text" value="Подкаталог 1" disabled>
                 <span onclick="unlockCatalog(this)" class="pencil">
@@ -306,7 +306,7 @@
             </div>
         </div>
         <div class="category ">
-            <h1>Подкатегория 5</h1>
+            <h1 class="h1">Подкатегория 5</h1>
             <div class="redact">
                 <input type="text" value="Подкаталог 1" disabled>
                 <span onclick="unlockCatalog(this)" class="pencil">
@@ -425,7 +425,7 @@
         </div>
         
     </div>
-    <div class="items selected">
+    <div class="items">
         <div class="item">
             <div class="img-scroll" onmouseleave="leaveItem(this)">
                 <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
@@ -453,9 +453,11 @@
             <div class="btn-menu">
                 <span>100000  ₽</span>
                 <div class="btn-setting">
-                    <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
-                    </svg>
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
                     <svg>
                         <use xlink:href="/main.svg#delete-svg"></use>
                     </svg>
@@ -489,45 +491,11 @@
             <div class="btn-menu">
                 <span>100000  ₽</span>
                 <div class="btn-setting">
-                    <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
-                    </svg>
-                    <svg>
-                        <use xlink:href="/main.svg#delete-svg"></use>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="img-scroll" onmouseleave="leaveItem(this)">
-                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/1.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/2.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/3.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/4.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/5.png" alt="">
-                </span>
-            </div>
-            <div class="about-item">
-                <a href="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </a><br><br>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
-            </div>
-            <div class="btn-menu">
-                <span>100000  ₽</span>
-                <div class="btn-setting">
-                    <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
-                    </svg>
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
                     <svg>
                         <use xlink:href="/main.svg#delete-svg"></use>
                     </svg>
@@ -561,45 +529,11 @@
             <div class="btn-menu">
                 <span>100000  ₽</span>
                 <div class="btn-setting">
-                    <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
-                    </svg>
-                    <svg>
-                        <use xlink:href="/main.svg#delete-svg"></use>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="img-scroll" onmouseleave="leaveItem(this)">
-                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/1.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/2.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/3.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/4.png" alt="">
-                </span>
-                <span class="hover-span-img" onmouseenter="itemScroll(this)">
-                    <img src="/images/items/5.png" alt="">
-                </span>
-            </div>
-            <div class="about-item">
-                <a href="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </a><br><br>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
-            </div>
-            <div class="btn-menu">
-                <span>100000  ₽</span>
-                <div class="btn-setting">
-                    <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
-                    </svg>
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
                     <svg>
                         <use xlink:href="/main.svg#delete-svg"></use>
                     </svg>
@@ -633,9 +567,87 @@
             <div class="btn-menu">
                 <span>100000  ₽</span>
                 <div class="btn-setting">
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
                     <svg>
-                        <use xlink:href="/main.svg#pencil-svg"></use>
+                        <use xlink:href="/main.svg#delete-svg"></use>
                     </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="img-scroll" onmouseleave="leaveItem(this)">
+                <span class="hover-span-img first active" style="margin-left: 0px" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/1.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/2.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/3.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/4.png" alt="">
+                </span>
+                <span class="hover-span-img" onmouseenter="itemScroll(this)">
+                    <img src="/images/items/5.png" alt="">
+                </span>
+            </div>
+            <div class="about-item">
+                <a href="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </a><br><br>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam labore perferendis facilis consequatur, exercitationem ullam tempora laborum ad rerum eum inventore, dolore sed est porro corporis perspiciatis soluta ab?</span>
+            </div>
+            <div class="btn-menu">
+                <span>100000  ₽</span>
+                <div class="btn-setting">
+                    <span onclick="addNewItem()">
+                        <svg>
+                            <use xlink:href="/main.svg#pencil-svg"></use>
+                        </svg>
+                    </span>
                     <svg>
                         <use xlink:href="/main.svg#delete-svg"></use>
                     </svg>

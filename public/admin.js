@@ -1,10 +1,27 @@
+let marginDefault = 0
+
 window.addEventListener('resize', closeNavigation);
 
-let scrollContener = document.querySelector('.categories')
-scrollContener.addEventListener('wheel', (e) => {
-    e.preventDefault()
-    scrollContener.scrollLeft += e.deltaY
-})
+window.addEventListener('click', (e)=>{
+    let pageWidthCatalog = window.innerWidth
+    if (pageWidthCatalog < 700){
+        if (e.target.type == 'text'){
+            if(e.target.closest('.redact')){
+                if(e.target.disabled){
+                    if (marginDefault > -200){
+                        marginDefault -= 100
+                        scrollCategories(e.target.closest('.redact'))
+                    }
+                }
+            }
+        } else if(e.target.className == 'h1'){
+            if (marginDefault < 0){
+                marginDefault += 100
+                scrollCategories(e.target.closest('.category'))
+            }
+        }
+    } 
+});
 
 let addAdminForm = querySelector('.add-admin-menu')
 let inputNewPwd = addAdminForm.querySelector('input[name="newpassword"]')
@@ -24,10 +41,14 @@ function openNavigation() {
 
 function closeNavigation() {
     let pageWidth = window.innerWidth
-    if (pageWidth > 640){
+    if (pageWidth > 900){
         document.querySelector('.navigation-menu')?.classList.remove('active')
-        document.querySelector('.blur')?.classList.remove('active')
+        document.querySelector('.blur-add')?.classList.remove('active')
     }  
+    else if(pageWidth > 700) {
+        document.querySelector('.categories').style['margin-left'] = 0
+        marginDefault = 0
+    }
 }
 
 function fullOrderMenu(div){
@@ -140,5 +161,14 @@ function showSelectImgPreview(srcImg){
 
 function addImgItem(btn){
     console.log(btn.parentNode.querySelector('input'))
-    btn.parentNode.querySelector('input').click()
+    btn.parentNode.querySelector('.add-img-item')?.click()
+}
+
+function inputSelected(inp){
+    inp.parentNode.parentNode.querySelector('.select')?.classList.remove('select')
+    inp.parentNode.querySelector('label').classList.add('select')
+}
+
+function scrollCategories(divRedact){
+    divRedact.closest('.categories').style['margin-left'] = marginDefault + 'vw'
 }

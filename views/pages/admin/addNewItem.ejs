@@ -1,4 +1,4 @@
-<form class="add-new-item active">
+<form class="add-new-item">
     <div class="close-row">
         <span onclick="closeMenu()">
             <svg>
@@ -6,21 +6,25 @@
             </svg>
         </span>
     </div>
-    <div class="flex-menu">
+    <div class="scroll-page">
+        <div class="flex-menu-desc">
         <div class="preview">
             <div class="full-preview">
-                <img src="/images/items/1.png" alt="">
-                <input type="file" accept="image/*">
-                <div class="btn-delete">
-                    <svg>
-                        <use xlink:href="/main.svg#delete-svg"></use>
-                    </svg>
-                </div>
-                <div class="line-add" onclick="addImgItem(this)">
-                    <div>
-                        <span>Добавить фото</span>
+                <div class="img">
+                    <img src="/images/items/1.png" alt="">
+                    <input type="file" accept="image/*" class="add-img-item">
+                    <div class="btn-delete">
+                        <svg>
+                            <use xlink:href="/main.svg#delete-svg"></use>
+                        </svg>
+                    </div>
+                    <div class="line-add" onclick="addImgItem(this)">
+                        <div>
+                            <span>Добавить фото</span>
+                        </div>
                     </div>
                 </div>
+                <input type="text" class="price" required placeholder="Цена...">
             </div>
             <div class="small-preview">
                 <div onclick="selectedImgPreview(this)">
@@ -45,6 +49,46 @@
             <input type="text" placeholder="Введите навание..." required>
             <h3>Описание товара</h3>
             <textarea type="text" placeholder="Введите описание..."></textarea>
+        </div>
+        </div>
+        <h2>Выберете категорию</h2>
+        <div class="flex-menu-catalog">
+            <div class="catalog first">
+                <div>
+                    <input type="radio" name="catalog" id="catalog-1" value="catalog-1" onclick="inputSelected(this)">
+                    <label for="catalog-1">Каталог 1</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog" id="catalog-2" value="catalog-2"  onclick="inputSelected(this)">
+                    <label for="catalog-2">Каталог 2</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog" id="catalog-3" value="catalog-3"  onclick="inputSelected(this)">
+                    <label for="catalog-3">Каталог 3</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog" id="catalog-4" value="catalog-4"  onclick="inputSelected(this)">
+                    <label for="catalog-4">Каталог 4</label>
+                </div>
+            </div>
+            <div class="catalog">
+                <div>
+                    <input type="radio" name="catalog-2" id="catalog-1-1" value="catalog-1" onclick="inputSelected(this)">
+                    <label for="catalog-1-1">Каталог 1</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog-2" id="catalog-2-2" value="catalog-2"  onclick="inputSelected(this)">
+                    <label for="catalog-2-2">Каталог 2</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog-2" id="catalog-3-3" value="catalog-3"  onclick="inputSelected(this)">
+                    <label for="catalog-3-3">Каталог 3</label>
+                </div>
+                <div>
+                    <input type="radio" name="catalog-2" id="catalog-4-4" value="catalog-4"  onclick="inputSelected(this)">
+                    <label for="catalog-4-4">Каталог 4</label>
+                </div>
+            </div>
         </div>
     </div>
     <button>Добавить</button>
