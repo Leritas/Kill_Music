@@ -6,6 +6,17 @@ scrollContener.addEventListener('wheel', (e) => {
     scrollContener.scrollLeft += e.deltaY
 })
 
+let addAdminForm = querySelector('.add-admin-menu')
+let inputNewPwd = addAdminForm.querySelector('input[name="newpassword"]')
+let inputPwdRepeat = addAdminForm.querySelector('input[name="password-repeat"]')
+inputPwdRepeat.addEventListener('change', () => {
+    if (inputPwdRepeat?.value == inputNewPwd?.value) {
+        addAdminForm.querySelector('button').disabled = false
+    } else {
+        addAdminForm.querySelector('button').disabled = true
+    }
+})
+
 function openNavigation() {
     document.querySelector('.navigation-menu').classList.add('active')
     document.querySelector('.blur-add').classList.add('active')

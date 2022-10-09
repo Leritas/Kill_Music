@@ -11,13 +11,13 @@
     <h3>Добавить аккаунт</h3>
     <div class="inp-block">
         <div>
-            <input type="text" name="login" required placeholder="Логин...">
+            <input type="login" name="newlogin" required placeholder="Логин...">
         </div>
         <div>
-            <input type="mail" name="email"  required placeholder="Email...">
+            <input type="mail" name="newemail"  required placeholder="Email...">
         </div>
         <div>
-            <input type="password" name="password" required placeholder="Пароль...">
+            <input type="password" name="newpassword" required placeholder="Пароль...">
             <span onclick="showInput(this)">
                 <svg>
                     <use xlink:href="/main.svg#show-svg"></use>
@@ -33,12 +33,12 @@
             </span>
         </div>
         
-        <select name="select">
+        <select name="newlevel">
             <option disabled>Выберите сотрудника</option>
-            <option value="Администратор">Администратор</option>
-            <option value="Редактор">Редактор</option>
-            <option value="Менеджер" selected>Менеджер</option>
+            <option value="1">Администратор</option>
+            <option value="2">Редактор</option>
+            <option value="3" selected>Менеджер</option>
         </select>
     </div>
-    <button class="btn">Сохранить</button>
+    <button class="btn" type="submit" disabled>Сохранить</button>
 </form>
