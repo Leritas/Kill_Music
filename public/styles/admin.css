@@ -118,20 +118,40 @@ a:focus-visible {
   width: 100%;
   height: 75px;
 }
-.auth input {
+.auth div {
+  display: flex;
   width: 350px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  padding-left: 10px;
-  background: whitesmoke;
   border: 1px solid lightgrey;
   border-radius: 5px;
+  background: whitesmoke;
+  text-align: left;
 }
-.auth input:focus-visible {
+.auth div input {
+  border: 0px;
+  background: 0;
+  width: calc(100% - 50px);
+  height: 50px;
+  padding-left: 10px;
+}
+.auth div input:focus-visible {
   outline: 0;
-  border-color: grey;
+}
+.auth div span {
+  cursor: pointer;
+}
+.auth div span svg {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  fill: grey;
+  transition: fill 0.2s;
+}
+.auth div span:hover svg {
+  fill: #FF6600;
 }
 .auth button {
   width: 350px;
@@ -296,7 +316,7 @@ a:focus-visible {
 .body .orders {
   display: none;
 }
-.body .orders.active {
+.body .orders.selected {
   display: block;
   width: 100%;
   height: calc(100vh - 129px);
@@ -453,7 +473,7 @@ a:focus-visible {
   overflow-y: hidden;
   overflow-x: scroll;
 }
-.body .categories.active {
+.body .categories.selected {
   display: flex;
 }
 .body .categories::-webkit-scrollbar {
@@ -573,7 +593,7 @@ a:focus-visible {
 .body .items::-webkit-scrollbar {
   width: 0;
 }
-.body .items.active {
+.body .items.selected {
   display: block;
 }
 .body .items .item {
@@ -684,7 +704,7 @@ a:focus-visible {
 .body .users {
   display: none;
 }
-.body .users.active {
+.body .users.selected {
   display: block;
   width: 100%;
   height: calc(100vh - 129px);
@@ -1005,6 +1025,196 @@ a:focus-visible {
 }
 .close-row svg:hover {
   stroke: #FF6600;
+}
+
+.add-new-item {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  transition: 0.2s;
+}
+.add-new-item.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.add-new-item .flex-menu {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.add-new-item .flex-menu .preview {
+  width: 387px;
+  height: 300px;
+  display: flex;
+  overflow: hidden;
+}
+.add-new-item .flex-menu .preview .full-preview {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.add-new-item .flex-menu .preview .full-preview input {
+  display: none;
+}
+.add-new-item .flex-menu .preview .full-preview .btn-delete {
+  opacity: 0;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.add-new-item .flex-menu .preview .full-preview .btn-delete svg {
+  width: 30px;
+  height: 30px;
+  fill: #FF6600;
+  transition: fill 0.2s;
+}
+.add-new-item .flex-menu .preview .full-preview .btn-delete svg:hover {
+  fill: grey;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add {
+  opacity: 0;
+  position: absolute;
+  top: calc(50% - 25px);
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 0.4s;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add::before {
+  content: "";
+  margin-top: 25px;
+  width: calc(50% - 70px);
+  height: 1px;
+  background: #FF6600;
+  transition: 0.2s;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add::after {
+  content: "";
+  margin-top: 25px;
+  width: calc(50% - 70px);
+  height: 1px;
+  background: #FF6600;
+  transition: 0.2s;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add div {
+  display: inline-block;
+  line-height: 50px;
+  width: 140px;
+  font-size: 18px;
+  color: #FF6600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add:hover::before {
+  background: grey;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add:hover::after {
+  background: grey;
+}
+.add-new-item .flex-menu .preview .full-preview .line-add:hover div {
+  color: grey;
+}
+.add-new-item .flex-menu .preview .full-preview img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.add-new-item .flex-menu .preview .full-preview:hover img {
+  filter: blur(4px);
+}
+.add-new-item .flex-menu .preview .full-preview:hover .btn-delete {
+  opacity: 1;
+}
+.add-new-item .flex-menu .preview .full-preview:hover .line-add {
+  opacity: 1;
+}
+.add-new-item .flex-menu .preview .small-preview {
+  display: flex;
+  flex-direction: column;
+  width: 83px;
+  height: 300px;
+  padding-left: 12px;
+  overflow-y: scroll;
+}
+.add-new-item .flex-menu .preview .small-preview::-webkit-scrollbar {
+  width: 0;
+}
+.add-new-item .flex-menu .preview .small-preview div {
+  min-width: 71px;
+  min-height: 71px;
+  margin: 2px 0 2px 0;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.add-new-item .flex-menu .preview .small-preview div img {
+  width: 71px;
+  height: 71px;
+}
+.add-new-item .flex-menu .preview .small-preview div.active {
+  border: 1px solid #FF6600;
+}
+.add-new-item .flex-menu .descr-item {
+  padding-left: 12px;
+  text-align: left;
+}
+.add-new-item .flex-menu .descr-item h3 {
+  color: grey;
+  font-size: 22px;
+}
+.add-new-item .flex-menu .descr-item input {
+  width: 500px;
+  height: 50px;
+  background: 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  outline: 0;
+  margin: 12px 0 24px 0;
+  padding-left: 5px;
+}
+.add-new-item .flex-menu .descr-item textarea {
+  width: 500px;
+  height: 148px;
+  resize: none;
+  outline: 0;
+  background: 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 12px;
+}
+.add-new-item button {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: 64px;
+  background: 0;
+  border: 0;
+  border-top: 1px solid grey;
+  color: #FF6600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.add-new-item button:hover {
+  color: grey;
+  width: 100%;
+  left: 0;
+  background: rgba(153, 153, 153, 0.2);
 }
 
 @media screen and (max-width: 600px) {

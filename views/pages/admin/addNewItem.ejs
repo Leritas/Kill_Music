@@ -1,0 +1,51 @@
+<form class="add-new-item active">
+    <div class="close-row">
+        <span onclick="closeMenu()">
+            <svg>
+                <use xlink:href="/main.svg#close-svg"></use>
+            </svg>
+        </span>
+    </div>
+    <div class="flex-menu">
+        <div class="preview">
+            <div class="full-preview">
+                <img src="/images/items/1.png" alt="">
+                <input type="file" accept="image/*">
+                <div class="btn-delete">
+                    <svg>
+                        <use xlink:href="/main.svg#delete-svg"></use>
+                    </svg>
+                </div>
+                <div class="line-add" onclick="addImgItem(this)">
+                    <div>
+                        <span>Добавить фото</span>
+                    </div>
+                </div>
+            </div>
+            <div class="small-preview">
+                <div onclick="selectedImgPreview(this)">
+                    <img src="/images/items/1.png" alt="">
+                </div>
+                <div onclick="selectedImgPreview(this)">
+                    <img src="/images/items/2.png" alt="">
+                </div>
+                <div onclick="selectedImgPreview(this)">
+                    <img src="/images/items/3.png" alt="">
+                </div>
+                <div onclick="selectedImgPreview(this)">
+                    <img src="/images/items/4.png" alt="">
+                </div>
+                <div onclick="selectedImgPreview(this)">
+                    <img src="/images/items/5.png" alt="">
+                </div>
+            </div>               
+        </div>
+        <div class="descr-item">
+            <h3>Название товара</h3>
+            <input type="text" placeholder="Введите навание..." required>
+            <h3>Описание товара</h3>
+            <textarea type="text" placeholder="Введите описание..."></textarea>
+        </div>
+    </div>
+    <button>Добавить</button>
+</form>

@@ -19,9 +19,7 @@
     <%- include('pages/admin/admin-panel') %>
     <%- include('pages/admin/addAccount') %>
     <%- include('pages/admin/editAccount') %>
-
-
-
+    <%- include('pages/admin/addNewItem') %>
 
 <% } else { %> 
     <form action="" method="post" class="auth">
@@ -32,8 +30,17 @@
             </svg>
         </a> 
         <%- locals.say %>
-        <input type="login" name="login" id="login" required placeholder="Login...">
-        <input type="password" name="password" id="password" required placeholder="Password...">
+        <div>
+            <input type="login" name="login" id="login" required placeholder="Login...">
+        </div>
+        <div>
+            <input type="password" name="password" id="password" required placeholder="Password...">
+            <span onclick="showInput(this)">    
+                <svg>
+                    <use xlink:href="/main.svg#show-svg"></use>
+                </svg>
+            </span>    
+        </div>    
         <button type="submit">Войти</button>
     </form>
 <% } %>
