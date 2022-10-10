@@ -1,4 +1,5 @@
 let marginDefault = 0
+let marginDefaultItem = 0
 
 window.addEventListener('resize', closeNavigation);
 
@@ -18,6 +19,22 @@ window.addEventListener('click', (e)=>{
             if (marginDefault < 0){
                 marginDefault += 100
                 scrollCategories(e.target.closest('.category'))
+            }
+        }
+    } 
+
+    if (pageWidthCatalog < 940){
+        if (e.target.type == 'radio'){
+            if(e.target.closest('.catalog')){            
+                if (marginDefaultItem > -200){
+                    marginDefaultItem -= 100
+                    scrollCategoriesItem(e.target.closest('.catalog'))
+                }
+            }
+        } else if(e.target.className == 'h3'){
+            if (marginDefaultItem < 0){
+                marginDefaultItem += 100
+                scrollCategoriesItem(e.target.closest('.catalog'))
             }
         }
     } 
@@ -171,4 +188,8 @@ function inputSelected(inp){
 
 function scrollCategories(divRedact){
     divRedact.closest('.categories').style['margin-left'] = marginDefault + 'vw'
+}
+
+function scrollCategoriesItem(divRedact){
+    divRedact.closest('.flex-menu-catalog').style['margin-left'] = marginDefaultItem + 'vw'
 }

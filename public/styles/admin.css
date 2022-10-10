@@ -85,6 +85,7 @@ body {
   background: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 a {
@@ -1043,6 +1044,7 @@ a:focus-visible {
   opacity: 0;
   pointer-events: none;
   position: absolute;
+  z-index: 5;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1055,10 +1057,11 @@ a:focus-visible {
   pointer-events: all;
 }
 .add-new-item .scroll-page {
-  width: 100%;
+  width: 100vw;
   max-height: calc(100vh - 128px);
   margin: auto;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: auto;
   scrollbar-color: #999999 #ffffff;
 }
@@ -1083,22 +1086,16 @@ a:focus-visible {
   max-width: 400px;
   height: 350px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   overflow: hidden;
 }
 .add-new-item .scroll-page .flex-menu-desc .preview .full-preview {
   position: relative;
   width: 300px;
-  height: 350px;
+  height: 300px;
   overflow: hidden;
   transition: 0.2s;
-}
-.add-new-item .scroll-page .flex-menu-desc .preview .full-preview .price {
-  width: 100%;
-  height: 50px;
-  border: 0;
-  outline: 0;
-  background: 0;
-  border-bottom: 1px solid lightgrey;
 }
 .add-new-item .scroll-page .flex-menu-desc .preview .full-preview .img .add-img-item {
   display: none;
@@ -1214,6 +1211,14 @@ a:focus-visible {
 .add-new-item .scroll-page .flex-menu-desc .preview .small-preview div.active {
   border: 1px solid #FF6600;
 }
+.add-new-item .scroll-page .flex-menu-desc .preview .price {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  background: 0;
+  border-bottom: 1px solid lightgrey;
+}
 .add-new-item .scroll-page .flex-menu-desc .descr-item {
   padding-left: 12px;
   text-align: left;
@@ -1261,6 +1266,7 @@ a:focus-visible {
   padding-left: 12px;
   border-left: 1px solid lightgrey;
   overflow-y: scroll;
+  line-height: 50px;
 }
 .add-new-item .scroll-page .flex-menu-catalog .catalog::-webkit-scrollbar {
   width: 0;
@@ -1268,6 +1274,11 @@ a:focus-visible {
 .add-new-item .scroll-page .flex-menu-catalog .catalog.first {
   border: 0px;
   padding-left: 0;
+}
+.add-new-item .scroll-page .flex-menu-catalog .catalog h3 {
+  font-size: 24px;
+  color: grey;
+  margin-bottom: 12px;
 }
 .add-new-item .scroll-page .flex-menu-catalog div {
   text-align: left;
@@ -1312,11 +1323,54 @@ a:focus-visible {
   background: rgba(153, 153, 153, 0.2);
 }
 
-@media screen and (max-width: 600px) {
-  .auth {
-    left: 0;
+@media screen and (max-width: 1200px) {
+  .body .categories .category {
+    min-width: auto;
+    max-width: 250px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc {
     width: 100%;
-    box-shadow: 0 0 0 0;
+    padding: 0 12px 0 12px;
+  }
+  .add-new-item .scroll-page .flex-menu-catalog {
+    width: 100%;
+    padding: 12px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .add-new-item .scroll-page .flex-menu-desc {
+    display: block;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview {
+    margin: auto;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .descr-item {
+    padding: 12px;
+    text-align: center;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .descr-item h3 {
+    text-align: center;
+  }
+  .add-new-item .scroll-page h2 {
+    text-align: center;
+  }
+  .add-new-item .scroll-page .flex-menu-catalog {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px 0 12px 0;
+    margin-left: 0;
+    transition: margin-left 0.4s;
+  }
+  .add-new-item .scroll-page .flex-menu-catalog .catalog {
+    width: 100vw;
+    border: 0;
+  }
+  .add-new-item .scroll-page .flex-menu-catalog div {
+    text-align: center;
+  }
+  .add-new-item .scroll-page .flex-menu-catalog div label {
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -1358,17 +1412,6 @@ a:focus-visible {
     width: calc(100% - 64px);
   }
 }
-@media screen and (max-width: 460px) {
-  .body header {
-    text-align: right;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .body .categories .category {
-    min-width: auto;
-    max-width: 250px;
-  }
-}
 @media screen and (max-width: 700px) {
   .body .categories {
     width: -webkit-max-content;
@@ -1382,5 +1425,155 @@ a:focus-visible {
   }
   .body .categories .category .redact svg {
     fill: grey;
+  }
+}
+@media screen and (max-width: 600px) {
+  .auth {
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 0 0;
+  }
+  .edit-account {
+    border-radius: 0;
+    width: 100%;
+    left: 0;
+  }
+  .edit-account form {
+    width: calc(100% - 24px);
+  }
+  .add-admin-menu {
+    left: 0;
+    width: 100%;
+    height: 600px;
+    padding: 12px;
+    border-radius: 0;
+  }
+  .add-admin-menu .inp-block {
+    width: calc(100% - 24px);
+    height: 380px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .add-new-item .scroll-page .flex-menu-desc {
+    display: block;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview {
+    margin: auto;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .descr-item h3 {
+    color: grey;
+    font-size: 22px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .descr-item input {
+    width: 100%;
+    margin: 12px 12px 24px 12px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .descr-item textarea {
+    width: 100%;
+    margin: 12px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .body header {
+    text-align: right;
+  }
+  .body .items .item {
+    display: block;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .body .items .item .img-scroll {
+    margin: auto;
+  }
+  .body .items .item .about-item {
+    width: 100%;
+    padding: 12px 0 12px 0;
+  }
+  .body .items .item .btn-menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+  }
+  .body .items .item .btn-menu .btn-setting {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 50px;
+  }
+  .body .items .item .btn-menu .btn-setting svg {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    cursor: pointer;
+    fill: grey;
+    transition: fill 0.2s;
+  }
+  .body .items .item .btn-menu .btn-setting svg:hover {
+    fill: #FF6600;
+  }
+  .body .items .btn-add-item {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    width: calc(100% - 24px);
+    height: 64px;
+    line-height: 64px;
+    color: #FF6600;
+    font-size: 20px;
+    border-top: 1px solid lightgrey;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .body .items .btn-add-item:hover {
+    color: grey;
+  }
+}
+@media screen and (max-width: 440px) {
+  .add-new-item {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    transition: 0.2s;
+  }
+  .add-new-item.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview {
+    min-width: 262px;
+    max-width: 262px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview .full-preview {
+    width: 200px;
+    height: 200px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview .full-preview .img img {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview .small-preview {
+    width: 62px;
+    height: 200px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview .small-preview div {
+    min-width: 50px;
+    min-height: 50px;
+  }
+  .add-new-item .scroll-page .flex-menu-desc .preview .small-preview div img {
+    width: 50px;
+    height: 50px;
   }
 }/*# sourceMappingURL=admin.css.map */
