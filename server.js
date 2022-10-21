@@ -20,6 +20,10 @@ app.get('/about', (req, res) => {
   res.render('index', { title: 'О нас | Kill Music', page: 'about' })
 })
 
+app.get('/catalog', (req, res) => {
+  res.render('index', { title: 'Каталог | Kill Music', page: 'catalog' })
+})
+
 app.get('/contacts', (req, res) => {
   res.render('index', { title: 'Контакты | Kill Music' , page: 'contacts'})
 })

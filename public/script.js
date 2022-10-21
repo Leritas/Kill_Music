@@ -140,3 +140,7 @@ function activeHome(span){
     span.parentNode.querySelector('.active')?.classList.remove('active')
     span.classList.toggle('active')
 }
+
+function functionShowHideCatalog(div){
+    div.parentNode.querySelector('.catalog-menu').classList.toggle('show')
+}
