@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 
 //константы для авторизации
-const cookieParser = require('cookie-parser')
 const passport = require('passport'),
   localStrategy = require('passport-local').Strategy,
   session = require('express-session'),
@@ -66,12 +65,16 @@ passport.use(
   )
 )
 
+function checkAuth(req,res,parametrs) {
+    if (!req.user) {return res.redirect('/admin/login')} else {return res.render('admin', parametrs)}
+}
+
 router.get('/', (req,res) => {
-  res.redirect('/admin/home')
+  return res.redirect('/admin/home')
 })
 
 router.get('/login', (req, res) => {
-  res.render('admin', {auth: false})
+  return res.render('admin', {auth: false})
 })
 
 router.post(
@@ -83,19 +86,17 @@ router.post(
   })
 )
 
-function checkAuth(req,res) {
-    if (!req.user) return res.redirect('/admin/login')
-}
+
 
 router.get('/home', (req, res) => {
-  checkAuth(req,res)
-  res.render('admin', {auth:true})
+  let parametrs = {auth:true}
+  return checkAuth(req,res,parametrs)
 })
 
 router.get('/logout', (req,res)  => {
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('/admin/home');
+    return res.redirect('/admin/home');
   });
 })
 
