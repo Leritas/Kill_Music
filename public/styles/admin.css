@@ -966,8 +966,7 @@ a:focus-visible {
   position: absolute;
   right: 10px;
   top: 10px;
-  opacity: 1;
-  pointer-events: all;
+  display: block;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -978,16 +977,13 @@ a:focus-visible {
   fill: #FF6600;
 }
 .edit-account form div svg.active {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 .edit-account form div .show {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 .edit-account form div .show.active {
-  opacity: 1;
-  pointer-events: all;
+  display: block;
 }
 .edit-account form select {
   width: 100%;

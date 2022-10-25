@@ -190,8 +190,17 @@
     </form>
     <div class="screen-menu">
         <div class="filter-menu">
-            <span>Сортировка:</span>
-            <div class="sort-btn"></div>
+            <span>Сортировка</span>
+            <div class="sort-btn">
+                <span>По алфавиту</span>
+                <span>По популярности</span>
+                <span>По стоимости</span>
+            </div>
+            <span class="svg">
+                <svg>
+                    <use xlink:href="/main.svg#filtr-svg"></use>
+                </svg>
+            </span>
         </div>
         <div class="items-grid">
             <div class="item" onmouseleave="leaveItem(this)">

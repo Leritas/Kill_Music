@@ -23,12 +23,9 @@ const query = (command, method = 'all') => {
   });
 };
 
-
-
-
-
-
-
+router.post('/addAdmin', (req, res) => {
+    return res.redirect('/admin/home')
+  })
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
@@ -86,8 +83,6 @@ router.post(
   })
 )
 
-
-
 router.get('/home', (req, res) => {
   let parametrs = {auth:true}
   return checkAuth(req,res,parametrs)
@@ -99,7 +94,6 @@ router.get('/logout', (req,res)  => {
     return res.redirect('/admin/home');
   });
 })
-
 
 
 module.exports = router

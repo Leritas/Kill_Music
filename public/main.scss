@@ -1767,6 +1767,7 @@ header {
             margin-left: 12px;
 
             .filter-menu{
+                position: relative;
                 width: 100%;
                 height: 76px;
                 margin-top: 24px;
@@ -1776,12 +1777,45 @@ header {
                     line-height: 38px;
                     color: grey;
                     font-size: 18px;
+
+                    &.svg{
+                        position: absolute;
+                        display: none;
+                        right: 0px;
+                        bottom: 0px;
+                        cursor: pointer;
+                        line-height: normal;
+
+                        svg{   
+                            width: 38px;
+                            height: 38px;
+                            margin: 12px;
+                            fill: grey;
+                            transition: fill .2s;
+                        }
+
+                        &:hover{
+                            svg{
+                                fill: $primary-orange;
+                            }
+                        }
+                    }
                 }
 
                 .sort-btn{
                     width: 100%;
                     height: 38px;
                     display: flex;
+
+                    span{
+                        margin-right: 12px;
+                        cursor: pointer;
+                        transition: color .2s;
+
+                        &:hover{
+                            color: $primary-orange;
+                        }
+                    }
                 }
             }
 
@@ -2226,6 +2260,330 @@ footer {
             }
         }
 
+    }
+
+    .wrap {        
+        .flex-item{
+            .options-menu{
+                position: absolute;
+                top: 0;
+                width: calc(100% - 24px);
+                min-height: 100vh;
+                max-height: 100vh;
+                margin: 0;
+                padding: 24px 12px 24px 12px;
+                background: white;
+                z-index: 11;
+                overflow-y: scroll;
+    
+                div{
+                    width: 100%;
+    
+                    h2{
+                        font-weight: inherit;
+                        margin: 12px 0 12px 0;
+                    }
+    
+                    select{
+                        width: 100%;
+                        height: 50px;
+                        border: 1px solid lightgrey;
+                        border-radius: 5px;
+                        outline: 0;
+                        margin: 12px 0 12px 0;
+                    }
+    
+                    .inp-flex{
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+    
+                        input{
+                            width: 50%;
+                            height: 50px;
+                            outline: 0;
+                            border: 1px solid lightgrey;   
+                            padding-left: 12px;
+    
+                            &.first{
+                                border-top-left-radius: 5px;
+                                border-bottom-left-radius: 5px;
+                            }
+    
+                            &.second{
+                                border-top-right-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+                        }
+                    }
+    
+                    div{
+                        width: 100%;
+                        height: 40px;
+    
+                        &.select-check {
+                            position: relative;
+    
+                            .checkbox-div{
+                                position: absolute;
+                                top: 7px;
+                                left: 7px;
+                                width: 26px;
+                                height: 26px;
+                                border: 1px solid grey;
+                                border-radius: 5px;
+                                cursor: pointer;
+    
+                                svg{
+                                    width: 26px;
+                                    height: 26px;
+                                    fill: white;
+                                    opacity: 0;
+                                    transition: opacity .2s;
+                                }
+                            }
+                            
+                            .checkbox{
+                                position: absolute;
+                                z-index: -1;
+                                opacity: 0;                            
+    
+                            }
+    
+                            .checkbox:checked ~ .checkbox-div{
+                                background: $primary-orange;
+                                border-color: $primary-orange;
+    
+                                svg{
+                                    opacity: 1;
+                                }
+                            }
+    
+    
+                            
+    
+                            label{
+                                font-size: 22px;
+                                color: grey;
+                                margin-left: 50px;
+                                line-height: 40px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .screen-menu{
+                width: calc(100% - 312px);
+                margin-left: 12px;
+    
+                .filter-menu{
+                    position: relative;
+                    width: 100%;
+                    height: 76px;
+                    margin-top: 24px;
+                    border-bottom: 1px solid lightgrey;
+    
+                    span{
+                        line-height: 38px;
+                        color: grey;
+                        font-size: 18px;
+    
+                        &.svg{
+                            position: absolute;
+                            display: none;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: pointer;
+                            line-height: normal;
+    
+                            svg{   
+                                width: 38px;
+                                height: 38px;
+                                margin: 12px;
+                                fill: grey;
+                                transition: fill .2s;
+                            }
+    
+                            &:hover{
+                                svg{
+                                    fill: $primary-orange;
+                                }
+                            }
+                        }
+                    }
+    
+                    .sort-btn{
+                        width: 100%;
+                        height: 38px;
+                        display: flex;
+    
+                        span{
+                            margin-right: 12px;
+                            cursor: pointer;
+                            transition: color .2s;
+    
+                            &:hover{
+                                color: $primary-orange;
+                            }
+                        }
+                    }
+                }
+    
+                .items-grid{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+                    justify-items: center;
+                    width: 100%;
+    
+                    .item {
+                        position: relative;
+                        min-width: 300px;
+                        max-width: 1fr;
+                        height: 600px;
+                        padding: 12px;
+                        margin: 12px;
+                        border-radius: 5px;
+                        border: 1px solid lightgrey;
+                        transition: box-shadow .4s;
+    
+                        &:hover {
+                            box-shadow: 0 0 20px rgba(153, 153, 153, .8);
+    
+                            .favorite {
+                                background: rgba(153, 153, 153, .8);
+    
+                                &:hover {
+                                    background: rgba(153, 153, 153, .6);
+    
+                                    svg {
+                                        fill: $primary-orange;
+                                    }
+    
+                                }
+                            }
+                        }
+    
+                        .img-scroll {
+                            position: relative;
+                            display: flex;
+                            width: 1fr;
+                            margin: auto;
+                            cursor: pointer;
+                            overflow: hidden;
+    
+                            .hover-span-img {
+                                height: 280px;
+                                flex-grow: 1;
+                                -webkit-flex-grow: 1;
+                                margin-left: 5px;
+                                border-bottom: 1px solid grey;
+                                
+    
+                                img {
+                                    
+                                    display: none;
+                                    pointer-events: none;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 5px;
+                                    left: 0;
+                                    border-top-left-radius: 5px;
+                                    border-top-right-radius: 5px;
+                                    width: 100%;
+                                    height: 278px;
+                                }
+    
+                                &.active {
+                                    border-color: $primary-orange;
+    
+                                    img {
+                                        display: block;
+                                    }
+                                }
+                            }
+    
+                            .favorite {
+                                position: absolute;
+                                top: 12px;
+                                right: 12px;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 100%;
+                                transition: .2s;
+                                cursor: pointer;
+            
+                                svg {
+                                    width: 40px;
+                                    height: 40px;
+                                    margin: 5px;
+                                    transition: fill .2s;
+                                }
+                            }
+                        }
+    
+                        h2 {
+                            text-align: left;
+                            margin-top: 12px;
+                            margin-bottom: 12px;
+    
+                        }
+    
+                        .info {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 245px;
+                            text-align: left;
+    
+                            a {
+                                font-size: 18px;
+                                transition: color .2s;
+                                max-height: 152px;
+                                overflow: hidden;
+    
+                                &:hover {
+                                    color: $primary-orange;
+                                }
+                            }
+    
+                            span {
+                                margin-top: 10px;
+                                font-size: 18px;
+    
+                                &.stock {
+                                    color: green;
+                                }
+    
+                                &.close {
+                                    color: red;
+                                }
+                            }
+    
+                            .in-cart {
+                                width: 100%;
+                                height: 50px;
+                                color: $primary-orange;
+                                text-align: center;
+                                line-height: 50px;
+                                margin-bottom: 0;
+                                margin-top: auto;
+                                border-top: 1px solid rgba(0, 0, 0, .1);
+                                cursor: pointer;
+                                transition: color .4s;
+    
+                                &:hover {
+                                    color: grey;
+                                }
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
     }
 }
 
